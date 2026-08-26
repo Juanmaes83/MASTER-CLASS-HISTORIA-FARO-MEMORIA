@@ -4,6 +4,18 @@
 
 A cinematic WebGL lighthouse experience developed from the methodology extracted from Kage and adapted into two official narrative editions that share the same visual/runtime DNA.
 
+## Replication master
+
+The complete reusable process — from the original The Last Lighthouse baseline through LAB work, Kage parity, root fixes, validation, storytelling consolidation and the final replication pipeline — is documented here:
+
+- **FARO Master Replication Process:** `docs/FARO-MASTER-REPLICATION-PROCESS.md`
+- **Method:** `METHOD.md`
+- **Kage parity:** `PHASE-2-KAGE-PARITY.md`
+- **Kage root fix:** `PHASE-3-KAGE-ROOT-FIX.md`
+- **Quality gate:** `QUALITY-GATE.md`
+
+Future agents and contributors must read the replication master before reconstructing, porting or visually upgrading this project. The objective is to reproduce the method and preserve approved behavior, not merely copy the final appearance.
+
 ## Official editions
 
 Both editions are part of the same project and must continue to exist:
