@@ -1,170 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#05090c">
-<title>The Last Lighthouse — Atlantic Memory Archive</title>
-<meta name="description" content="A cinematic scroll journey through the final night of an Atlantic lighthouse.">
+<title>The Last Lighthouse — Kage Architecture Study</title>
+<meta name="description" content="A continuous cinematic WebGL ascent through the final night of an Atlantic lighthouse.">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="world" aria-hidden="true">
-  <canvas id="gl"></canvas>
-  <div id="plateA" class="scene-plate"></div>
-  <div id="plateB" class="scene-plate"></div>
-  <div id="depthGrade"></div>
-  <div id="vignette"></div>
-  <div id="grain"></div>
-  <div class="gradient-blur gradient-blur--top"><div></div><div></div><div></div><div></div></div>
-  <div class="gradient-blur gradient-blur--bottom"><div></div><div></div><div></div><div></div></div>
-</div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="vignette" aria-hidden="true"></div>
+<div id="grain" aria-hidden="true"></div>
+<div id="fg-sky" aria-hidden="true"></div>
 
-<div id="foreground" aria-hidden="true">
-  <div class="fg fg--grass" data-fg="coast"></div>
-  <div class="fg fg--rail" data-fg="stair"></div>
-  <div class="fg fg--lens" data-fg="machine"></div>
-  <div class="fg fg--spray"></div>
-</div>
-
-<header class="nav">
-  <a class="identity" href="#opening" aria-label="The Last Lighthouse — top">
-    <span class="identity-mark"><i></i></span>
-    <span><strong>The Last Lighthouse</strong><small>Atlantic Memory Archive · 1891–2026</small></span>
-  </a>
-  <div class="bearing" aria-hidden="true"><span>NW</span><i></i><b id="bearingValue">312°</b></div>
-  <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false"><span>Index</span><i></i></button>
-</header>
-
-<aside id="chapterIndex" class="chapter-index" aria-label="Chapter index">
-  <div class="index-line"><i id="indexProgress"></i></div>
-  <a href="#coast" data-index="1"><b>01</b><span>Coast</span><small>Approach</small></a>
-  <a href="#keeper" data-index="2"><b>02</b><span>Keeper</span><small>Presence</small></a>
-  <a href="#machine" data-index="3"><b>03</b><span>Machine</span><small>Optics</small></a>
-  <a href="#beam" data-index="4"><b>04</b><span>Beam</span><small>Signal</small></a>
-  <a href="#afterlight" data-index="5"><b>05</b><span>Afterlight</span><small>Memory</small></a>
-</aside>
-
-<main id="story">
-<section id="opening" class="scene scene--opening" data-scene="0" data-plate="coast">
-  <div class="opening-coordinate coordinate coordinate--vertical">43°28' N · 09°11' W</div>
-  <div class="hero-copy">
-    <p class="kicker reveal">Atlantic Memory Archive · Field Study 01</p>
-    <h1 class="display display--hero reveal-words">THE LAST<br><em>LIGHTHOUSE</em></h1>
-    <p class="hero-deck reveal">Tonight the beacon completes its final rotation. The coast will wake tomorrow without it.</p>
+<nav class="nav" id="nav">
+  <a class="brand" href="#hero"><span class="brand-mark"><i></i></span><span><b>THE LAST LIGHTHOUSE</b><small>ATLANTIC MEMORY ARCHIVE</small></span></a>
+  <div class="nav-links" id="navlinks">
+    <a href="#coast">Coast</a><a href="#keeper">Keeper</a><a href="#stair">Ascent</a><a href="#machine">Machine</a><a href="#beam">Beam</a><a href="#afterlight">Afterlight</a>
   </div>
-  <div class="opening-meta reveal">
-    <div><small>Weather</small><strong>Salt fog · 18 kn</strong></div>
-    <div><small>Optical range</small><strong>22 nautical miles</strong></div>
-    <div><small>Final signal</small><strong>05:42 UTC</strong></div>
+  <button class="nav-burger" id="burger" aria-label="Open navigation" aria-expanded="false"><i></i><i></i></button>
+</nav>
+<div class="rail" id="rail" aria-label="Chapter navigation"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<main class="page" id="top">
+<section class="hero sec" id="hero" data-cam="0">
+  <div class="hero-top">
+    <div class="eyebrow" data-rv="up"><span class="dot"></span>Atlantic field study · 43°28′ N</div>
+    <h1 class="display h-hero word-reveal" data-rv="up">THE LAST<br>LIGHTHOUSE</h1>
+    <p class="body-lg hero-sub" data-rv="up">One final rotation. One climb through salt, iron and glass. Then the coast learns how to remember a light that no longer turns.</p>
   </div>
-  <a class="scroll-cue reveal" href="#coast"><span>Begin ascent</span><i></i></a>
-  <div class="ghost-type" aria-hidden="true">LIGHT</div>
+  <div class="hero-side" data-rv="up">FL W 6s</div>
+  <div class="hero-foot">
+    <div class="hero-cue" data-rv="fade"><span>Begin the ascent</span><span class="track"><i></i></span></div>
+    <div class="chapters">
+      <div class="chip"><span class="num">01</span><span><b>Coast</b><small>Approach</small></span></div>
+      <div class="chip"><span class="num">02</span><span><b>Keeper</b><small>Absence</small></span></div>
+      <div class="chip"><span class="num">03</span><span><b>Machine</b><small>Optics</small></span></div>
+      <div class="chip"><span class="num">04</span><span><b>Beam</b><small>Signal</small></span></div>
+    </div>
+  </div>
 </section>
 
-<section id="coast" class="scene scene--chapter scene--coast" data-scene="1" data-plate="coast">
-  <div class="chapter-no" aria-hidden="true">01</div>
-  <div class="scene-copy scene-copy--left">
-    <div class="chapter-label reveal"><b>01</b><span>The Coast</span><i></i><small>Windward approach</small></div>
-    <h2 class="display reveal-words">Before it is a tower,<br>it is a <em>promise</em><br>across distance.</h2>
-    <p class="lead reveal">The sea does not know the building is obsolete.</p>
-    <p class="body reveal">It keeps arriving in the same long lines, driving salt into iron, glass and limestone. Tonight the lantern is dark before the sky is.</p>
+<section class="sec chapter" id="coast" data-cam="1">
+  <div class="fg" data-fg="coast">
+    <span class="fg-el fg-rock" data-fg-in="left"></span>
+    <span class="fg-el fg-grass" data-fg-in="up"></span>
   </div>
-  <div class="scene-data scene-data--right reveal">
-    <span>FIELD NOTE / 01</span>
-    <strong>Wind 312°</strong>
-    <small>Pressure 998 hPa<br>Visibility 4.8 nm</small>
+  <header class="sec-head"><span class="k"><b>01</b> — THE COAST</span><span class="rule"></span><span class="k">WINDWARD APPROACH</span></header>
+  <div class="spread">
+    <h2 class="display h-sec" data-rv="up">Before a lighthouse is a tower, it is a promise across distance.</h2>
+    <div class="copy"><p class="lead" data-rv="up">The sea does not know the building is obsolete.</p><p class="body" data-rv="up">Salt keeps arriving. Iron keeps oxidising. The tower remains a coordinate long after electronics make its labour unnecessary. Tonight it will turn for the last time.</p></div>
   </div>
-  <div class="world-caption world-caption--bottom reveal"><span>THE HEADLAND</span><i></i><b>1891</b></div>
+  <div class="stats" data-rv="up"><div><b>1891</b><span>Commissioned</span></div><div><b>22 NM</b><span>Optical range</span></div><div><b>18 KN</b><span>Wind</span></div><div><b>312°</b><span>Bearing</span></div></div>
 </section>
 
-<section id="keeper" class="scene scene--chapter scene--keeper" data-scene="2" data-plate="keeper">
-  <div class="chapter-no" aria-hidden="true">02</div>
-  <div class="occlusion-door" aria-hidden="true"></div>
-  <div class="scene-copy scene-copy--right">
-    <div class="chapter-label reveal"><b>02</b><span>The Keeper</span><i></i><small>23:16 · watch room</small></div>
-    <h2 class="display reveal-words">A room can remember<br>a person without<br>showing their <em>face.</em></h2>
-    <p class="lead reveal">Oilskin. Brass. A cup gone cold. One final line in the log.</p>
-    <p class="body reveal">Presence survives in pressure marks, repeated measurements and objects returned to the same place every night.</p>
+<section class="sec chapter keeper" id="keeper" data-cam="2">
+  <div class="fg" data-fg="keeper"><span class="fg-el fg-door" data-fg-in="left"></span></div>
+  <header class="sec-head"><span class="k"><b>02</b> — THE KEEPER</span><span class="rule"></span><span class="k">23:16</span></header>
+  <div class="keeper-grid">
+    <div class="keeper-window" data-rv="fade"><div class="keeper-plate"></div><span class="window-label">ARCHIVE RECONSTRUCTION · NO PORTRAIT REQUIRED</span></div>
+    <div class="copy keeper-copy"><h2 class="display h-sec" data-rv="up">A room can remember a person without showing their face.</h2><p class="lead" data-rv="up">Oilskin. Brass. A cup gone cold. One final line in the log.</p><p class="body" data-rv="up">This is the one chapter where generated imagery owns the midground. Three.js does not duplicate the room; it supplies rain, exterior light and continuity around it.</p></div>
   </div>
-  <div class="log-fragment reveal" aria-label="Keeper log excerpt">
-    <small>LOG / 26 AUG</small>
-    <span>23:16</span>
-    <p>Weather deteriorating.<br>Lens cleaned.<br>Clock wound.</p>
-    <i></i>
-  </div>
-  <div class="coordinate coordinate--keeper" aria-hidden="true">WATCH II · 4 HOURS</div>
 </section>
 
-<section id="stair" class="scene scene--handoff" data-scene="2.5" data-plate="stair">
-  <div class="handoff-copy">
-    <p class="kicker reveal">Between the room and the signal</p>
-    <h2 class="display reveal-words">One hundred and forty<br><em>iron steps.</em></h2>
-  </div>
-  <div class="climb-scale" aria-hidden="true"><b>0 m</b><i></i><b>27.4 m</b></div>
+<section class="sec handoff" id="stair" data-cam="3">
+  <div class="fg" data-fg="stair"><span class="fg-el fg-rail" data-fg-in="right"></span></div>
+  <div class="handoff-copy"><div class="eyebrow" data-rv="fade">02.5 · ASCENT</div><h2 class="display h-sec" data-rv="up">The wall closes in.<br>The light moves above.</h2><p class="body-lg" data-rv="up">No dissolve. The stair itself hides the cut.</p></div>
 </section>
 
-<section id="machine" class="scene scene--machine" data-scene="3" data-plate="machine">
+<section class="sec machine" id="machine" data-cam="4">
+  <div class="fg" data-fg="machine"><span class="fg-el fg-lens" data-fg-in="right"></span></div>
   <div class="machine-sticky">
-    <div class="machine-copy">
-      <div class="chapter-label reveal"><b>03</b><span>The Machine</span><i></i><small>Optical room · 04:51</small></div>
-      <h2 class="display reveal-words">The lens does not make light.<br>It teaches light<br><em>where to go.</em></h2>
-      <p class="lead reveal">Glass becomes architecture. Rotation becomes time.</p>
-      <p class="body reveal">Concentric prisms compress the curve of a massive optic. Clockwork turns a simple source into a coded signal beyond the horizon.</p>
+    <header class="sec-head"><span class="k"><b>03</b> — THE MACHINE</span><span class="rule"></span><span class="k">FRESNEL / CLOCKWORK</span></header>
+    <div class="machine-grid">
+      <div class="copy"><h2 class="display h-sec" data-rv="up">The lens does not make light. It teaches light where to go.</h2><p class="lead" data-rv="up">Glass becomes architecture. Rotation becomes time.</p><p class="body" data-rv="up">This chapter is now owned by WebGL. The Fresnel, clockwork, gallery and lantern room share one camera and one depth system.</p></div>
+      <div class="live-window" data-view="machine"><div class="live-frame" data-frame></div><div class="live-meta"><span>LIVE OPTICAL VIEW</span><span>CAMERA B · 65 MM</span></div></div>
     </div>
-    <div class="fresnel-hud" aria-hidden="true">
-      <div class="hud-ring"><span></span><span></span><span></span></div>
-      <div class="hud-axis"></div>
-      <b id="azimuthReadout">000°</b>
-      <small>FRESNEL / FIRST ORDER</small>
-    </div>
-    <div class="machine-scale reveal"><span>BRASS</span><i></i><span>GLASS</span><i></i><span>IRON</span></div>
-    <div class="machine-ghost" aria-hidden="true">22 NM</div>
+    <div class="azimuth"><span>0°</span><i><b id="azimuthBar"></b></i><span>360°</span></div>
   </div>
 </section>
 
-<section id="beam" class="scene scene--beam" data-scene="4" data-plate="beam">
-  <div class="beam-copy">
-    <div class="chapter-label reveal"><b>04</b><span>The Beam</span><i></i><small>Final rotation</small></div>
-    <h2 class="display reveal-words">For six seconds,<br>the whole coast knows<br>exactly <em>where it is.</em></h2>
-  </div>
-  <div class="flash-character reveal"><small>LIGHT CHARACTER</small><strong>Fl W 6s</strong><span><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
-  <div class="beam-bearing" aria-hidden="true"><b>000</b><i></i><b>090</b><i></i><b>180</b><i></i><b>270</b><i></i><b>360</b></div>
+<section class="sec beam" id="beam" data-cam="5">
+  <div class="fg" data-fg="beam"><span class="fg-el fg-glass" data-fg-in="right"></span></div>
+  <div class="beam-copy"><div class="eyebrow" data-rv="fade">04 · THE BEAM</div><h2 class="display h-sec" data-rv="up">For six seconds, the whole coast knows exactly where it is.</h2><p class="body-lg" data-rv="up">Now the signal owns the frame. Glass, railing, fog and spray prove the distance it crosses.</p><div class="flash" data-rv="fade"><b>Fl W 6s</b><span>2,700 K · 22 NM</span></div></div>
 </section>
 
-<section id="afterlight" class="scene scene--afterlight" data-scene="5" data-plate="dawn">
-  <div class="after-copy">
-    <p class="kicker reveal">05 · Afterlight</p>
-    <h2 class="display reveal-words">A lighthouse can stop shining<br>before it stops <em>guiding.</em></h2>
-    <p class="lead reveal">At dawn the lens is only glass again.</p>
-    <p class="body reveal">What remains is a coordinate, a building and the memory of everyone who once searched bad weather for that pulse.</p>
-  </div>
-  <div class="after-rule reveal"><span>END OF SIGNAL</span><i></i><span>BEGINNING OF ARCHIVE</span><b>05:42 UTC</b></div>
-  <div class="ghost-type ghost-type--dawn" aria-hidden="true">AFTERLIGHT</div>
+<section class="sec fin" id="afterlight" data-cam="6">
+  <div class="fg" data-fg="afterlight"><span class="fg-el fg-horizon" data-fg-in="up"></span></div>
+  <div class="eyebrow" data-rv="fade">05 · AFTERLIGHT</div>
+  <h2 class="display" data-rv="up">A lighthouse can stop shining before it stops guiding.</h2>
+  <p class="body-lg" data-rv="up">At dawn the lens is only glass again. What remains is a coordinate, a building, and the memory of every person who once looked for that pulse in bad weather.</p>
+  <a class="cta" href="#hero" data-rv="fade"><i></i><span>Begin again</span></a>
 </section>
 
-<section class="scene scene--method" id="method">
-  <div class="method-head">
-    <p class="kicker reveal">Masterclass / Extraction</p>
-    <h2 class="display reveal-words">Same mechanics.<br><em>Different world.</em></h2>
-  </div>
-  <div class="method-grid reveal">
-    <div><b>A</b><strong>Story before shader</strong><span>Narrative is the camera operator.</span></div>
-    <div><b>B</b><strong>World before components</strong><span>Tokens define one coherent reality.</span></div>
-    <div><b>C</b><strong>Depth before decoration</strong><span>Foreground / midground / background.</span></div>
-    <div><b>D</b><strong>Motion maintains continuity</strong><span>Every handoff protects the world.</span></div>
-    <div><b>E</b><strong>Three.js stays invisible</strong><span>Do not show the engine. Show the place.</span></div>
-  </div>
-</section>
+<footer class="foot"><div><b>THE LAST LIGHTHOUSE</b><span>Phase 3 · Kage architecture reconstruction</span></div><div>DON'T SHOW THE THREE.JS. SHOW THE WORLD.</div></footer>
 </main>
 
-<div id="transitionFlash" aria-hidden="true"></div>
-<div id="cursor" aria-hidden="true"><span></span></div>
-
 <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
