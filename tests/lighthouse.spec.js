@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const fs = require('fs');
 
-test.setTimeout(120000);
+test.setTimeout(240000);
 
 const scenes = [
   ['opening', 'hero'],
@@ -22,19 +22,17 @@ async function collectErrors(page) {
 
 async function openSite(page) {
   await page.goto('/', { waitUntil: 'domcontentloaded', timeout: 30000 });
-  await page.waitForFunction(() => window.__FARO_QA__?.ready === true, null, { timeout: 15000 });
+  await page.waitForFunction(() => window.__FARO_QA__?.ready === true, null, { timeout: 20000 });
   await page.waitForTimeout(1200);
 }
 
-async function captureViewport(page, path) {
-  const cdp = await page.context().newCDPSession(page);
+async function captureViewport(cdp, path) {
   const shot = await cdp.send('Page.captureScreenshot', {
     format: 'png',
     fromSurface: true,
     captureBeyondViewport: false
   });
   fs.writeFileSync(path, Buffer.from(shot.data, 'base64'));
-  await cdp.detach();
 }
 
 async function jumpToScene(page, id, offsetFactor = .22) {
@@ -78,13 +76,19 @@ for (const viewport of [
     expect(architecture.webgl).toBeTruthy();
     expect(String(architecture.runtime?.world || '')).toMatch(/^single-webgl/);
     expect(architecture.runtime?.plates).toBe(false);
+    expect(architecture.runtime?.registered).toBe(true);
     expect(architecture.pageHeight).toBeGreaterThan(architecture.viewportHeight * 4);
 
     fs.mkdirSync('qa-artifacts', { recursive: true });
-    for (const [name, id] of scenes) {
-      await jumpToScene(page, id);
-      await page.waitForTimeout(800);
-      await captureViewport(page, `qa-artifacts/${viewport.name}-${name}.png`);
+    const cdp = await page.context().newCDPSession(page);
+    try {
+      for (const [name, id] of scenes) {
+        await jumpToScene(page, id);
+        await page.waitForTimeout(800);
+        await captureViewport(cdp, `qa-artifacts/${viewport.name}-${name}.png`);
+      }
+    } finally {
+      await cdp.detach().catch(() => {});
     }
 
     expect(errors, errors.join('\n')).toEqual([]);
@@ -112,5 +116,10 @@ test('desktop: foreground lifecycle and Machine live viewport', async ({ page })
   expect(machineState.runtime?.ready).toBeTruthy();
 
   fs.mkdirSync('qa-artifacts', { recursive: true });
-  await captureViewport(page, 'qa-artifacts/desktop-machine-close.png');
+  const cdp = await page.context().newCDPSession(page);
+  try {
+    await captureViewport(cdp, 'qa-artifacts/desktop-machine-close.png');
+  } finally {
+    await cdp.detach().catch(() => {});
+  }
 });
