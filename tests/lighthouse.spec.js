@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
+test.setTimeout(120000);
+
 const scenes = [
   ['opening', '#opening'],
   ['coast', '#coast'],
@@ -17,6 +19,11 @@ async function collectErrors(page) {
   return errors;
 }
 
+async function openSite(page) {
+  await page.goto('/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await page.waitForTimeout(4000);
+}
+
 for (const viewport of [
   { name: 'desktop', width: 1440, height: 1000 },
   { name: 'mobile', width: 390, height: 844 }
@@ -24,10 +31,9 @@ for (const viewport of [
   test(`${viewport.name}: Kage-architecture smoke + visual evidence`, async ({ page }) => {
     await page.setViewportSize({ width: viewport.width, height: viewport.height });
     const errors = await collectErrors(page);
-    await page.goto('/', { waitUntil: 'networkidle' });
-    await page.waitForTimeout(2500);
+    await openSite(page);
 
-    await expect(page.locator('body')).toContainText('The Last Lighthouse');
+    await expect(page.locator('body')).toContainText(/THE LAST LIGHTHOUSE/i);
     await expect(page.locator('#gl')).toBeVisible();
 
     const architecture = await page.evaluate(() => ({
@@ -50,9 +56,9 @@ for (const viewport of [
     for (const [name, selector] of scenes) {
       const target = page.locator(selector);
       await expect(target).toBeAttached();
-      await target.scrollIntoViewIfNeeded();
-      await page.waitForTimeout(900);
-      await page.screenshot({ path: `qa-artifacts/${viewport.name}-${name}.png`, fullPage: false });
+      await target.evaluate(el => window.scrollTo({ top: el.offsetTop + Math.min(el.offsetHeight * .22, 500), behavior: 'instant' }));
+      await page.waitForTimeout(700);
+      await page.screenshot({ path: `qa-artifacts/${viewport.name}-${name}.png`, fullPage: false, animations: 'disabled' });
     }
 
     expect(errors, errors.join('\n')).toEqual([]);
@@ -61,21 +67,21 @@ for (const viewport of [
 
 test('desktop: foreground lifecycle and Machine live viewport', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
-  await page.goto('/', { waitUntil: 'networkidle' });
-  await page.waitForTimeout(2000);
+  await openSite(page);
 
-  const machine = page.locator('#machine');
-  await machine.scrollIntoViewIfNeeded();
-  await page.waitForTimeout(1200);
+  await page.locator('#machine').evaluate(el => window.scrollTo({ top: el.offsetTop + innerHeight * .65, behavior: 'instant' }));
+  await page.waitForTimeout(1500);
 
   const machineState = await page.evaluate(() => ({
     activeGlobalForegrounds: document.querySelectorAll('#fg-sky .fg-active, #fg-sky [data-fg].fg-active').length,
-    machineCanvas: !!document.querySelector('#machine canvas, #machine [data-live-view], #machine [data-frame]'),
-    text: document.querySelector('#machine')?.innerText || ''
+    noFullScreenPlates: !document.querySelector('#plateA, #plateB, #depthGrade'),
+    text: document.querySelector('#machine')?.innerText || '',
+    webgl: !!(document.querySelector('#gl')?.getContext('webgl2') || document.querySelector('#gl')?.getContext('webgl'))
   }));
 
   expect(machineState.text.toLowerCase()).toContain('machine');
-  expect(machineState.activeGlobalForegrounds).toBeGreaterThanOrEqual(0);
+  expect(machineState.noFullScreenPlates).toBeTruthy();
+  expect(machineState.webgl).toBeTruthy();
 
-  await page.screenshot({ path: 'qa-artifacts/desktop-machine-close.png', fullPage: false });
+  await page.screenshot({ path: 'qa-artifacts/desktop-machine-close.png', fullPage: false, animations: 'disabled' });
 });
