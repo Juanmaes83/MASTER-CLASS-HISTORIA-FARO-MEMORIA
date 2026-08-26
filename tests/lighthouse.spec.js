@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const fs = require('fs');
 
 test.setTimeout(120000);
 
@@ -23,6 +24,17 @@ async function openSite(page) {
   await page.goto('/', { waitUntil: 'domcontentloaded', timeout: 30000 });
   await page.waitForFunction(() => window.__FARO_QA__?.ready === true, null, { timeout: 15000 });
   await page.waitForTimeout(1200);
+}
+
+async function captureViewport(page, path) {
+  const cdp = await page.context().newCDPSession(page);
+  const shot = await cdp.send('Page.captureScreenshot', {
+    format: 'png',
+    fromSurface: true,
+    captureBeyondViewport: false
+  });
+  fs.writeFileSync(path, Buffer.from(shot.data, 'base64'));
+  await cdp.detach();
 }
 
 for (const viewport of [
@@ -57,12 +69,13 @@ for (const viewport of [
     expect(architecture.runtime?.plates).toBe(false);
     expect(architecture.pageHeight).toBeGreaterThan(architecture.viewportHeight * 4);
 
+    fs.mkdirSync('qa-artifacts', { recursive: true });
     for (const [name, selector] of scenes) {
       const target = page.locator(selector);
       await expect(target).toBeAttached();
       await target.evaluate(el => window.scrollTo({ top: el.offsetTop + Math.min(el.offsetHeight * .22, 500), behavior: 'instant' }));
       await page.waitForTimeout(800);
-      await page.screenshot({ path: `qa-artifacts/${viewport.name}-${name}.png`, fullPage: false, animations: 'disabled', timeout: 20000 });
+      await captureViewport(page, `qa-artifacts/${viewport.name}-${name}.png`);
     }
 
     expect(errors, errors.join('\n')).toEqual([]);
@@ -89,5 +102,6 @@ test('desktop: foreground lifecycle and Machine live viewport', async ({ page })
   expect(machineState.webgl).toBeTruthy();
   expect(machineState.runtime?.ready).toBeTruthy();
 
-  await page.screenshot({ path: 'qa-artifacts/desktop-machine-close.png', fullPage: false, animations: 'disabled', timeout: 20000 });
+  fs.mkdirSync('qa-artifacts', { recursive: true });
+  await captureViewport(page, 'qa-artifacts/desktop-machine-close.png');
 });
