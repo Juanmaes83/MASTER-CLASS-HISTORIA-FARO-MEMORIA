@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#071015" />
+<title>The Last Lighthouse — An immersive memory of light</title>
+<meta name="description" content="A cinematic six-chapter journey through the last night of a decommissioned Atlantic lighthouse." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="plate" aria-hidden="true"></div><div id="grade" aria-hidden="true"></div><div id="grain" aria-hidden="true"></div>
+<nav class="nav" aria-label="Main navigation">
+  <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span><strong>The Last Lighthouse</strong><small>Atlantic Memory Archive</small></span></a>
+  <div class="navlinks"><a href="#coast">Coast</a><a href="#keeper">Keeper</a><a href="#machine">Machine</a><a href="#beam">Beam</a><a href="#afterlight">Afterlight</a></div>
+  <button class="sound" type="button" aria-label="Ambient sound is a future layer"><span>Sound study</span><i></i></button>
+</nav>
+<div class="section-rail" aria-hidden="true"><a href="#top"></a><a href="#coast"></a><a href="#keeper"></a><a href="#machine"></a><a href="#beam"></a><a href="#afterlight"></a></div>
+<main class="page">
+<section class="hero" id="top" data-scene="0">
+  <div class="hero-copy">
+    <div class="eyebrow" data-reveal>Atlantic Memory Archive · Field Study 01</div>
+    <h1 class="display split" data-reveal>The last <em>light</em> leaves slowly.</h1>
+    <p class="hero-sub" data-reveal>Tonight the beacon completes its final rotation. Walk the cliff, enter the keeper's room, climb into the machine and watch a century of guidance become memory.</p>
+  </div>
+  <div class="hero-foot" data-reveal>
+    <div class="coordinates"><div><b>Position</b><span>43° 28′ N</span></div><div><b>Weather</b><span>Salt fog / 18 kn</span></div><div><b>Final signal</b><span>05:42 UTC</span></div></div>
+    <div class="scrollcue"><span>Begin ascent</span><i></i></div>
+  </div>
+</section>
+
+<section class="chapter" id="coast" data-scene="1" data-plate="hero">
+  <div class="chapter-copy">
+    <div class="chapter-k" data-reveal><b>01</b> The Coast</div>
+    <h2 class="display split" data-reveal>Before a lighthouse is a tower, it is a promise across distance.</h2>
+    <p class="lead" data-reveal>The sea does not know the building is obsolete.</p>
+    <p data-reveal>It keeps arriving in the same long lines, grinding salt into iron and limestone. On the final evening the tower is still white enough to catch the remaining sky, but the lantern above it is already dark.</p>
+    <div class="micro" data-reveal><div><b>Optical range</b><span>22 nautical miles</span></div><div><b>Commissioned</b><span>1891</span></div></div>
+  </div>
+  <div class="visual" data-reveal><figure class="frame"><img id="img-coast" alt="The lighthouse on a severe Atlantic headland at blue hour"/><figcaption class="frame-label"><span>Field plate 01</span><span>Blue hour · exterior</span></figcaption><div class="frame-meta"><strong>The headland</strong><span>Windward approach</span></div></figure><span class="fg-shard one"></span><span class="fg-shard two"></span></div>
+</section>
+
+<section class="chapter alt" id="keeper" data-scene="2" data-plate="keeper">
+  <div class="chapter-copy">
+    <div class="chapter-k" data-reveal><b>02</b> The Keeper</div>
+    <h2 class="display split" data-reveal>A room can remember a person without showing their face.</h2>
+    <p class="lead" data-reveal>Oilskin. Brass. A cup gone cold. One final line in the log.</p>
+    <p data-reveal>The keeper is never shown. Presence is reconstructed from pressure marks, salt on cloth, repeated measurements, and the small discipline of objects returned to the same place every night.</p>
+    <div class="micro" data-reveal><div><b>Watch cycle</b><span>4 hours</span></div><div><b>Last entry</b><span>Weather deteriorating</span></div></div>
+  </div>
+  <div class="visual" data-reveal><figure class="frame"><img id="img-keeper" alt="Historic lighthouse keeper room with logbook and marine instruments"/><figcaption class="frame-label"><span>Archive reconstruction</span><span>Interior · 23:16</span></figcaption><div class="frame-meta"><strong>The empty watch</strong><span>No portrait required</span></div></figure></div>
+</section>
+
+<section class="chapter machine" id="machine" data-scene="3" data-plate="machine">
+ <div class="machine-inner">
+  <div class="chapter-copy">
+    <div class="chapter-k" data-reveal><b>03</b> The Machine</div>
+    <h2 class="display split" data-reveal>The lens does not make light. It teaches light where to go.</h2>
+    <p class="lead" data-reveal>Glass becomes architecture. Rotation becomes time.</p>
+    <p data-reveal>A Fresnel lens compresses a massive curved optic into concentric prisms. Behind it, gearing turns an ordinary source into a coded signal visible beyond the horizon. This is the mechanical heart of the story — and our vertical slice.</p>
+    <div class="beam-meter" data-reveal><div class="line"></div><small><span>0° dark sector</span><span>360° signal</span></small></div>
+  </div>
+  <div class="machine-stage" data-reveal>
+    <div class="lens-hud"><span class="dial"></span><span class="cross"></span></div>
+    <figure class="frame machine-frame"><img id="img-machine" alt="Historic Fresnel lens and lighthouse mechanism"/><figcaption class="frame-label"><span>Mechanism study</span><span>Fresnel / clockwork</span></figcaption><div class="frame-meta"><strong>Optical machine</strong><span>Brass · glass · iron</span></div></figure>
+    <div class="machine-note"><b>Method lesson</b>3D for motion and light. Generated plate for material richness. HTML for measurement and narrative.</div>
+  </div>
+ </div>
+</section>
+
+<section class="chapter" id="beam" data-scene="4">
+  <div class="chapter-copy">
+    <div class="chapter-k" data-reveal><b>04</b> The Beam</div>
+    <h2 class="display split" data-reveal>For six seconds, the whole coast knows exactly where it is.</h2>
+    <p class="lead" data-reveal>The final rotation begins.</p>
+    <p data-reveal>The beam cuts through suspended salt and fog, not as spectacle but as function. One sweep, darkness, one sweep again. The scroll now controls azimuth: the visitor is no longer reading about the signal — they are turning it.</p>
+    <div class="micro" data-reveal><div><b>Character</b><span>Fl W 6s</span></div><div><b>Beam temperature</b><span>2,700 K</span></div></div>
+  </div>
+  <div class="visual" data-reveal><div class="frame beam-study"><div class="beam-line"></div><div class="beam-tower"></div><div class="frame-label"><span>Live WebGL study</span><span>Scroll = azimuth</span></div><div class="frame-meta"><strong>The last signal</strong><span>Light as navigation</span></div></div></div>
+</section>
+
+<section class="afterlight" id="afterlight" data-scene="5" data-plate="dawn">
+ <div class="inner">
+  <div class="eyebrow" data-reveal>05 · Afterlight</div>
+  <h2 class="display split" data-reveal>A lighthouse can stop shining before it stops guiding.</h2>
+  <p data-reveal>At dawn the lens is only glass again. The beam is gone. What remains is a coordinate, a building, and the memory of every person who once looked for that pulse in bad weather.</p>
+  <div class="final-rule" data-reveal><span>End of signal · Beginning of archive</span><span>05:42 UTC</span></div>
+ </div>
+</section>
+
+<section class="manifesto" aria-label="Masterclass method">
+ <div><div class="eyebrow" data-reveal>Masterclass extraction</div><h3 data-reveal>Same mechanics. Entirely different world.</h3><p data-reveal>The exercise proves the method is portable: story first, world bible second, tokens third, shot architecture fourth, then a hybrid compositor that chooses 3D, generated imagery, HTML and motion according to narrative purpose.</p></div>
+ <div class="lessons" data-reveal>
+  <div class="lesson"><b>01</b><strong>Story before shader</strong><span>Narrative</span></div>
+  <div class="lesson"><b>02</b><strong>Tokens before components</strong><span>Direction</span></div>
+  <div class="lesson"><b>03</b><strong>2.5D before brute-force 3D</strong><span>Compositor</span></div>
+  <div class="lesson"><b>04</b><strong>One scene, one dominant idea</strong><span>Editing</span></div>
+  <div class="lesson"><b>05</b><strong>Validate the slice before scaling</strong><span>Quality gate</span></div>
+ </div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
