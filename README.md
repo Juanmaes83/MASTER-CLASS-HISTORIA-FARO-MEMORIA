@@ -2,7 +2,29 @@
 
 **IDEA BY RUBIK SOTA · 629554870**
 
-A new cinematic web experience developed as the practical counterpart to the methodology extracted from Kage, MengTo Skills, Towers and related immersive-web references.
+A cinematic WebGL lighthouse experience developed from the methodology extracted from Kage and adapted into two official narrative editions that share the same visual/runtime DNA.
+
+## Official editions
+
+Both editions are part of the same project and must continue to exist:
+
+1. **Original Edition** — `index.html`
+   - Approved lighthouse narrative.
+   - English / Spanish.
+   - Same WebGL world and visual system.
+
+2. **Double Storytelling Edition** — `storytelling.html`
+   - Same approved visual/runtime foundation.
+   - Double reading: lighthouse + loneliness / depression / disorientation / signal / asking for help.
+   - English / Spanish.
+   - Uses larger storytelling body text for improved emotional readability.
+
+The UI exposes an **ORIGINAL / STORYTELLING** switch so users can move between both readings without duplicating the runtime.
+
+Frozen backup branches also remain available:
+
+- `faro-approved-bilingual`
+- `faro-double-storytelling`
 
 ## Project authorship
 
@@ -10,12 +32,12 @@ The project must preserve the visible attribution **IDEA BY RUBIK SOTA · 629554
 
 ## Languages
 
-The public experience is bilingual:
+Both public editions are bilingual:
 
 - English (EN)
 - Spanish (ES)
 
-Language switching is handled by `i18n.js`, persists with `localStorage`, and updates navigation, narrative copy, metadata and accessibility labels without changing the approved WebGL runtime.
+The Original Edition uses `i18n.js`. The Double Storytelling Edition uses `i18n-storytelling.js`. Language choice persists through `localStorage` and does not alter the approved WebGL runtime.
 
 ## Thesis
 
@@ -25,40 +47,49 @@ We are not cloning Kage's Japanese visual surface. We are reusing its methodolog
 - a strict world bible and token system
 - chapters as composed shots
 - a fixed live WebGL environmental layer
-- hybrid 2.5D composition: Three.js + generated plates + HTML + CSS grade
+- hybrid composition: Three.js + local generated media + HTML + CSS grade
 - restrained motion and post-processing
 - procedural materials / geometry only where they add meaning
 - a vertical-slice quality gate before scaling
 
+## Double-storytelling thesis
+
+The second edition must work first as a lighthouse story and only progressively reveal the human reading. The narrative arc is:
+
+**DISTANCE → SOLITUDE → EFFORT → ORIENTATION → SIGNAL → ANSWER**
+
+The emotional reading must not romanticize depression, must not become clinical exposition, and must resolve toward connection and asking for help rather than melancholy alone.
+
+Core line:
+
+> A lighthouse can stop shining before it stops guiding.
+
+Supporting ideas:
+
+> Being lost is not the same as being unreachable.
+
+> Even a lighthouse needs someone watching for its signal.
+
 ## Demo narrative
 
-1. **The Coast** — the lighthouse as a promise across distance.
-2. **The Keeper** — memory reconstructed through objects, not portraits.
-3. **The Machine** — the Fresnel lens and clockwork as the mechanical heart.
-4. **The Beam** — scroll controls the signal azimuth.
-5. **Afterlight** — the beam ends; the archive begins.
+1. **The Coast** — distance.
+2. **The Keeper** — solitude.
+3. **The Ascent** — effort.
+4. **The Machine** — orientation and invisible work.
+5. **The Beam** — signal.
+6. **Afterlight** — answer, memory and connection.
 
 ## Technical architecture
 
-- Static HTML/CSS/JS, no framework required for the first slice.
+- Static HTML/CSS/JS.
 - Three.js r149 as live atmospheric runtime.
+- One shared approved WebGL world for both editions.
 - Original procedural sea shader, lighthouse geometry, Fresnel rings, beacon cone and salt-fog particles.
-- GPT Image 2 generated scene plates used as cinematic material-rich layers.
+- Generated scene media used locally rather than as a full-screen replacement world.
 - CSS grain, vignette, negative-space editorial system and responsive typography.
 - IntersectionObserver for reveal choreography.
 - Scroll-driven scene/camera state and beacon progression.
-- Separate `i18n.js` + `i18n.css` layer so bilingual UI and authorship do not disturb the approved visual runtime.
-
-## Visual tokens
-
-- Atlantic black `#071015`
-- Storm blue `#172a34`
-- Chalk white `#e8ebe6`
-- Sea-glass green `#719a95`
-- Oxidized iron `#925b3c`
-- Sodium amber `#d79a52`
-
-Motion is deliberately slow and restrained. Decorative motion without narrative purpose is rejected.
+- Shared `app.js`; editions differ only in editorial copy and scoped storytelling typography.
 
 ## Quality gate
 
@@ -70,6 +101,7 @@ The project should not be called complete until:
 - the Machine scene reads as a premium composition rather than a Three.js tech demo
 - generated imagery, 3D and editorial layers feel like one world
 - EN and ES can be switched without visual regression
+- both Original and Storytelling editions remain independently accessible
 - **IDEA BY RUBIK SOTA · 629554870** remains visible and documented
 
 ## Reference sources
