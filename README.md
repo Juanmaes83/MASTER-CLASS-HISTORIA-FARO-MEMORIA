@@ -1,6 +1,21 @@
 # THE LAST LIGHTHOUSE — Masterclass Project
 
+**IDEA BY RUBIK SOTA · 629554870**
+
 A new cinematic web experience developed as the practical counterpart to the methodology extracted from Kage, MengTo Skills, Towers and related immersive-web references.
+
+## Project authorship
+
+The project must preserve the visible attribution **IDEA BY RUBIK SOTA · 629554870** across the public experience and project documentation. This credit is part of the project identity and must not be removed in future visual or runtime iterations.
+
+## Languages
+
+The public experience is bilingual:
+
+- English (EN)
+- Spanish (ES)
+
+Language switching is handled by `i18n.js`, persists with `localStorage`, and updates navigation, narrative copy, metadata and accessibility labels without changing the approved WebGL runtime.
 
 ## Thesis
 
@@ -32,6 +47,7 @@ We are not cloning Kage's Japanese visual surface. We are reusing its methodolog
 - CSS grain, vignette, negative-space editorial system and responsive typography.
 - IntersectionObserver for reveal choreography.
 - Scroll-driven scene/camera state and beacon progression.
+- Separate `i18n.js` + `i18n.css` layer so bilingual UI and authorship do not disturb the approved visual runtime.
 
 ## Visual tokens
 
@@ -53,6 +69,8 @@ The project should not be called complete until:
 - no critical console errors remain
 - the Machine scene reads as a premium composition rather than a Three.js tech demo
 - generated imagery, 3D and editorial layers feel like one world
+- EN and ES can be switched without visual regression
+- **IDEA BY RUBIK SOTA · 629554870** remains visible and documented
 
 ## Reference sources
 

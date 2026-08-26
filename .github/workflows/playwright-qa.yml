@@ -1,0 +1,42 @@
+name: Playwright QA
+
+on:
+  push:
+    branches: [phase-3-kage-architecture]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install --save-dev @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve site
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-http.log 2>&1 &
+          echo $! > /tmp/faro-http.pid
+          sleep 2
+      - name: Run browser QA
+        run: |
+          mkdir -p qa-artifacts
+          npx playwright test
+      - name: Upload screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-playwright-qa
+          path: |
+            qa-artifacts/
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
