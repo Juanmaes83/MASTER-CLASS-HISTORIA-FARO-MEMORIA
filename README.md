@@ -26,6 +26,23 @@ Frozen backup branches also remain available:
 - `faro-approved-bilingual`
 - `faro-double-storytelling`
 
+## Social experience master
+
+The living product/documentation source for the support layer is:
+
+- **Master:** `docs/LIGHT-SIGNAL-ANSWER-CONNECTION/MASTER.md`
+- **Original source preserved:** `docs/LIGHT-SIGNAL-ANSWER-CONNECTION/SOURCE-ORIGINAL.txt`
+
+The master organizes the project around:
+
+**LIGHT → SIGNAL → ANSWER → CONNECTION**
+
+and the five core doors:
+
+**EXPERIENCE → LISTEN → LEARN → SIGNAL → CONNECT**
+
+All future support, podcast, workshop, participation and institutional improvements should be added to the MASTER using its improvement template rather than appended as loose notes.
+
 ## Project authorship
 
 The project must preserve the visible attribution **IDEA BY RUBIK SOTA · 629554870** across the public experience and project documentation. This credit is part of the project identity and must not be removed in future visual or runtime iterations.
