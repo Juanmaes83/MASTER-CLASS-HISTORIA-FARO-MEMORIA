@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="i18n.css">
 <link rel="stylesheet" href="storytelling.css">
-<link rel="stylesheet" href="support-actions.css">
 </head>
 <body class="storytelling-edition">
 <canvas id="gl" aria-hidden="true"></canvas>
@@ -19,21 +18,76 @@
 <div id="fg-sky" aria-hidden="true"></div>
 <div class="project-credit" aria-label="Project authorship">IDEA BY RUBIK SOTA · 629554870</div>
 <div class="experience-switch" aria-label="Experience version"><a href="index.html">Original</a><a class="active" href="storytelling.html" aria-current="page">Storytelling</a></div>
-<nav class="nav" id="nav"><a class="brand" href="#hero"><span class="brand-mark"><i></i></span><span><b>THE LAST LIGHTHOUSE</b><small>ATLANTIC MEMORY ARCHIVE</small></span></a><div class="nav-links" id="navlinks"><a href="#coast">Coast</a><a href="#keeper">Keeper</a><a href="#stair">Ascent</a><a href="#machine">Machine</a><a href="#beam">Beam</a><a href="#afterlight">Afterlight</a></div><div class="lang-switch" role="group" aria-label="Language / Idioma"><button type="button" data-lang="en" class="active" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="es" aria-pressed="false">ES</button></div><button class="nav-burger" id="burger" aria-label="Open navigation" aria-expanded="false"><i></i><i></i></button></nav>
-<div class="rail" id="rail" aria-label="Chapter navigation"></div><div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="#hero"><span class="brand-mark"><i></i></span><span><b>THE LAST LIGHTHOUSE</b><small>ATLANTIC MEMORY ARCHIVE</small></span></a>
+  <div class="nav-links" id="navlinks">
+    <a href="#coast">Coast</a><a href="#keeper">Keeper</a><a href="#stair">Ascent</a><a href="#machine">Machine</a><a href="#beam">Beam</a><a href="#afterlight">Afterlight</a>
+  </div>
+  <div class="lang-switch" role="group" aria-label="Language / Idioma">
+    <button type="button" data-lang="en" class="active" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="es" aria-pressed="false">ES</button>
+  </div>
+  <button class="nav-burger" id="burger" aria-label="Open navigation" aria-expanded="false"><i></i><i></i></button>
+</nav>
+<div class="rail" id="rail" aria-label="Chapter navigation"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
 <main class="page" id="top">
-<section class="hero sec" id="hero" data-cam="0"><div class="hero-top"><div class="eyebrow" data-rv="up"><span class="dot"></span>Atlantic field study · 43°28′ N</div><h1 class="display h-hero word-reveal" data-rv="up">THE LAST<br>LIGHTHOUSE</h1><p class="body-lg hero-sub" data-rv="up">One final rotation. One climb through salt, iron and glass. A story about a lighthouse — and about what happens when keeping the light on becomes harder than anyone can see.</p></div><div class="hero-side" data-rv="up">FL W 6s</div><div class="hero-foot"><div class="hero-cue" data-rv="fade"><span>Begin the ascent</span><span class="track"><i></i></span></div><div class="chapters"><div class="chip"><span class="num">01</span><span><b>Coast</b><small>Distance</small></span></div><div class="chip"><span class="num">02</span><span><b>Keeper</b><small>Solitude</small></span></div><div class="chip"><span class="num">03</span><span><b>Machine</b><small>Orientation</small></span></div><div class="chip"><span class="num">04</span><span><b>Beam</b><small>Signal</small></span></div></div></div></section>
-<section class="sec chapter" id="coast" data-cam="1"><div class="fg" data-fg="coast"><span class="fg-el fg-rock" data-fg-in="left"></span><span class="fg-el fg-grass" data-fg-in="up"></span></div><header class="sec-head"><span class="k"><b>01</b> — THE COAST</span><span class="rule"></span><span class="k">WINDWARD APPROACH</span></header><div class="spread"><h2 class="display h-sec" data-rv="up">Before a lighthouse is a tower, it is a promise across distance.</h2><div class="copy"><p class="lead" data-rv="up">From far away, it is difficult to know what a structure is carrying.</p><p class="body" data-rv="up">Salt keeps arriving. Iron keeps oxidising. The tower remains upright through weather that leaves marks no one sees from shore. Standing does not mean untouched. Tonight it will turn for the last time.</p></div></div><div class="stats" data-rv="up"><div><b>1891</b><span>Commissioned</span></div><div><b>22 NM</b><span>Optical range</span></div><div><b>18 KN</b><span>Wind</span></div><div><b>312°</b><span>Bearing</span></div></div></section>
-<section class="sec chapter keeper" id="keeper" data-cam="2"><div class="fg" data-fg="keeper"><span class="fg-el fg-door" data-fg-in="left"></span></div><header class="sec-head"><span class="k"><b>02</b> — THE KEEPER</span><span class="rule"></span><span class="k">23:16</span></header><div class="keeper-grid"><div class="keeper-window" data-rv="fade"><div class="keeper-plate"></div><span class="window-label">ARCHIVE RECONSTRUCTION · NO PORTRAIT REQUIRED</span></div><div class="copy keeper-copy"><h2 class="display h-sec" data-rv="up">A room can remember a person without showing their face.</h2><p class="lead" data-rv="up">Oilskin. Brass. A cup gone cold. One final line in the log.</p><p class="body" data-rv="up">Solitude rarely announces itself. It gathers in routines, in quiet rooms, in the distance between one signal and the next. A lighthouse can be surrounded by an ocean and still have no one close enough to hear it.</p></div></div></section>
-<section class="sec handoff" id="stair" data-cam="3"><div class="fg" data-fg="stair"><span class="fg-el fg-rail" data-fg-in="right"></span></div><div class="handoff-copy"><div class="eyebrow" data-rv="fade">02.5 · ASCENT</div><h2 class="display h-sec" data-rv="up">The wall closes in.<br>The light moves above.</h2><p class="body-lg" data-rv="up">Some climbs become hardest when the destination is still visible. One step is not the whole journey. It is only the next one.</p></div></section>
-<section class="sec machine" id="machine" data-cam="4"><div class="fg" data-fg="machine"><span class="fg-el fg-lens" data-fg-in="right"></span></div><div class="machine-sticky"><header class="sec-head"><span class="k"><b>03</b> — THE MACHINE</span><span class="rule"></span><span class="k">FRESNEL / CLOCKWORK</span></header><div class="machine-grid"><div class="copy"><h2 class="display h-sec" data-rv="up">The lens does not make light. It teaches light where to go.</h2><p class="lead" data-rv="up">Glass becomes architecture. Rotation becomes direction.</p><p class="body" data-rv="up">From the coast, the light looks simple. Inside, it is a system of pressure, alignment, maintenance and fragile precision. What appears effortless from far away may be held together by work no one else can see.</p></div><div class="live-window" data-view="machine"><div class="live-frame" data-frame></div><div class="live-meta"><span>LIVE OPTICAL VIEW</span><span>CAMERA B · 65 MM</span></div></div></div><div class="azimuth"><span>0°</span><i><b id="azimuthBar"></b></i><span>360°</span></div></div></section>
-<section class="sec beam" id="beam" data-cam="5"><div class="fg" data-fg="beam"><span class="fg-el fg-glass" data-fg-in="right"></span></div><div class="beam-copy"><div class="eyebrow" data-rv="fade">04 · THE BEAM</div><h2 class="display h-sec" data-rv="up">For six seconds, the whole coast knows exactly where it is.</h2><p class="body-lg" data-rv="up">A beam is not proof that nothing is wrong. It is a signal: I am here. Look this way. A signal is not weakness; it is how another shore knows where to look.</p><div class="flash" data-rv="fade"><b>Fl W 6s</b><span>2,700 K · 22 NM</span></div></div></section>
-<section class="sec fin" id="afterlight" data-cam="6"><div class="fg" data-fg="afterlight"><span class="fg-el fg-horizon" data-fg-in="up"></span></div><div class="eyebrow" data-rv="fade">05 · AFTERLIGHT</div><h2 class="display" data-rv="up">A lighthouse can stop shining before it stops guiding.</h2><p class="body-lg" data-rv="up">At dawn the lens is only glass again. What remains is a coordinate, a history, and every life once guided by its signal. If you ever lose your bearing, send one. Being lost is not the same as being unreachable. Even a lighthouse needs someone watching for its signal.</p><a class="cta" href="#hero" data-rv="fade"><i></i><span>Begin again</span></a></section>
+<section class="hero sec" id="hero" data-cam="0">
+  <div class="hero-top">
+    <div class="eyebrow" data-rv="up"><span class="dot"></span>Atlantic field study · 43°28′ N</div>
+    <h1 class="display h-hero word-reveal" data-rv="up">THE LAST<br>LIGHTHOUSE</h1>
+    <p class="body-lg hero-sub" data-rv="up">One final rotation. One climb through salt, iron and glass. A story about a lighthouse — and about what happens when keeping the light on becomes harder than anyone can see.</p>
+  </div>
+  <div class="hero-side" data-rv="up">FL W 6s</div>
+  <div class="hero-foot">
+    <div class="hero-cue" data-rv="fade"><span>Begin the ascent</span><span class="track"><i></i></span></div>
+    <div class="chapters">
+      <div class="chip"><span class="num">01</span><span><b>Coast</b><small>Distance</small></span></div>
+      <div class="chip"><span class="num">02</span><span><b>Keeper</b><small>Solitude</small></span></div>
+      <div class="chip"><span class="num">03</span><span><b>Machine</b><small>Orientation</small></span></div>
+      <div class="chip"><span class="num">04</span><span><b>Beam</b><small>Signal</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec chapter" id="coast" data-cam="1">
+  <div class="fg" data-fg="coast"><span class="fg-el fg-rock" data-fg-in="left"></span><span class="fg-el fg-grass" data-fg-in="up"></span></div>
+  <header class="sec-head"><span class="k"><b>01</b> — THE COAST</span><span class="rule"></span><span class="k">WINDWARD APPROACH</span></header>
+  <div class="spread"><h2 class="display h-sec" data-rv="up">Before a lighthouse is a tower, it is a promise across distance.</h2><div class="copy"><p class="lead" data-rv="up">From far away, it is difficult to know what a structure is carrying.</p><p class="body" data-rv="up">Salt keeps arriving. Iron keeps oxidising. The tower remains upright through weather that leaves marks no one sees from shore. Standing does not mean untouched. Tonight it will turn for the last time.</p></div></div>
+  <div class="stats" data-rv="up"><div><b>1891</b><span>Commissioned</span></div><div><b>22 NM</b><span>Optical range</span></div><div><b>18 KN</b><span>Wind</span></div><div><b>312°</b><span>Bearing</span></div></div>
+</section>
+
+<section class="sec chapter keeper" id="keeper" data-cam="2">
+  <div class="fg" data-fg="keeper"><span class="fg-el fg-door" data-fg-in="left"></span></div>
+  <header class="sec-head"><span class="k"><b>02</b> — THE KEEPER</span><span class="rule"></span><span class="k">23:16</span></header>
+  <div class="keeper-grid"><div class="keeper-window" data-rv="fade"><div class="keeper-plate"></div><span class="window-label">ARCHIVE RECONSTRUCTION · NO PORTRAIT REQUIRED</span></div><div class="copy keeper-copy"><h2 class="display h-sec" data-rv="up">A room can remember a person without showing their face.</h2><p class="lead" data-rv="up">Oilskin. Brass. A cup gone cold. One final line in the log.</p><p class="body" data-rv="up">Solitude rarely announces itself. It gathers in routines, in quiet rooms, in the distance between one signal and the next. A lighthouse can be surrounded by an ocean and still have no one close enough to hear it.</p></div></div>
+</section>
+
+<section class="sec handoff" id="stair" data-cam="3">
+  <div class="fg" data-fg="stair"><span class="fg-el fg-rail" data-fg-in="right"></span></div>
+  <div class="handoff-copy"><div class="eyebrow" data-rv="fade">02.5 · ASCENT</div><h2 class="display h-sec" data-rv="up">The wall closes in.<br>The light moves above.</h2><p class="body-lg" data-rv="up">Some climbs become hardest when the destination is still visible. One step is not the whole journey. It is only the next one.</p></div>
+</section>
+
+<section class="sec machine" id="machine" data-cam="4">
+  <div class="fg" data-fg="machine"><span class="fg-el fg-lens" data-fg-in="right"></span></div>
+  <div class="machine-sticky"><header class="sec-head"><span class="k"><b>03</b> — THE MACHINE</span><span class="rule"></span><span class="k">FRESNEL / CLOCKWORK</span></header><div class="machine-grid"><div class="copy"><h2 class="display h-sec" data-rv="up">The lens does not make light. It teaches light where to go.</h2><p class="lead" data-rv="up">Glass becomes architecture. Rotation becomes direction.</p><p class="body" data-rv="up">From the coast, the light looks simple. Inside, it is a system of pressure, alignment, maintenance and fragile precision. What appears effortless from far away may be held together by work no one else can see.</p></div><div class="live-window" data-view="machine"><div class="live-frame" data-frame></div><div class="live-meta"><span>LIVE OPTICAL VIEW</span><span>CAMERA B · 65 MM</span></div></div></div><div class="azimuth"><span>0°</span><i><b id="azimuthBar"></b></i><span>360°</span></div></div>
+</section>
+
+<section class="sec beam" id="beam" data-cam="5">
+  <div class="fg" data-fg="beam"><span class="fg-el fg-glass" data-fg-in="right"></span></div>
+  <div class="beam-copy"><div class="eyebrow" data-rv="fade">04 · THE BEAM</div><h2 class="display h-sec" data-rv="up">For six seconds, the whole coast knows exactly where it is.</h2><p class="body-lg" data-rv="up">A beam is not proof that nothing is wrong. It is a signal: I am here. Look this way. A signal is not weakness; it is how another shore knows where to look.</p><div class="flash" data-rv="fade"><b>Fl W 6s</b><span>2,700 K · 22 NM</span></div></div>
+</section>
+
+<section class="sec fin" id="afterlight" data-cam="6">
+  <div class="fg" data-fg="afterlight"><span class="fg-el fg-horizon" data-fg-in="up"></span></div>
+  <div class="eyebrow" data-rv="fade">05 · AFTERLIGHT</div><h2 class="display" data-rv="up">A lighthouse can stop shining before it stops guiding.</h2><p class="body-lg" data-rv="up">At dawn the lens is only glass again. What remains is a coordinate, a history, and every life once guided by its signal. If you ever lose your bearing, send one. Being lost is not the same as being unreachable. Even a lighthouse needs someone watching for its signal.</p><a class="cta" href="#hero" data-rv="fade"><i></i><span>Begin again</span></a>
+</section>
+
 <footer class="foot"><div><b>THE LAST LIGHTHOUSE</b><span>Double-storytelling edition · lighthouse / human signal</span></div><div>LIGHT → SIGNAL → ANSWER</div></footer>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
 <script src="i18n-storytelling.js"></script>
-<script src="support-actions.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
