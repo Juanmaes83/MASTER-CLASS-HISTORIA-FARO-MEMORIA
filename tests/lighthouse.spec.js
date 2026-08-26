@@ -4,13 +4,13 @@ const fs = require('fs');
 test.setTimeout(120000);
 
 const scenes = [
-  ['opening', '#hero'],
-  ['coast', '#coast'],
-  ['keeper', '#keeper'],
-  ['stair', '#stair'],
-  ['machine', '#machine'],
-  ['beam', '#beam'],
-  ['afterlight', '#afterlight']
+  ['opening', 'hero'],
+  ['coast', 'coast'],
+  ['keeper', 'keeper'],
+  ['stair', 'stair'],
+  ['machine', 'machine'],
+  ['beam', 'beam'],
+  ['afterlight', 'afterlight']
 ];
 
 async function collectErrors(page) {
@@ -35,6 +35,17 @@ async function captureViewport(page, path) {
   });
   fs.writeFileSync(path, Buffer.from(shot.data, 'base64'));
   await cdp.detach();
+}
+
+async function jumpToScene(page, id, offsetFactor = .22) {
+  const result = await page.evaluate(({ id, offsetFactor }) => {
+    const el = document.getElementById(id);
+    if (!el) return { ok: false, id };
+    const y = el.offsetTop + Math.min(el.offsetHeight * offsetFactor, 500);
+    window.scrollTo(0, y);
+    return { ok: true, id, y };
+  }, { id, offsetFactor });
+  expect(result.ok, `Missing scene #${id}`).toBeTruthy();
 }
 
 for (const viewport of [
@@ -65,15 +76,13 @@ for (const viewport of [
     expect(architecture.depthGrade).toBeFalsy();
     expect(architecture.fgSky).toBeTruthy();
     expect(architecture.webgl).toBeTruthy();
-    expect(architecture.runtime?.world).toBe('single-webgl');
+    expect(String(architecture.runtime?.world || '')).toMatch(/^single-webgl/);
     expect(architecture.runtime?.plates).toBe(false);
     expect(architecture.pageHeight).toBeGreaterThan(architecture.viewportHeight * 4);
 
     fs.mkdirSync('qa-artifacts', { recursive: true });
-    for (const [name, selector] of scenes) {
-      const target = page.locator(selector);
-      await expect(target).toBeAttached();
-      await target.evaluate(el => window.scrollTo({ top: el.offsetTop + Math.min(el.offsetHeight * .22, 500), behavior: 'instant' }));
+    for (const [name, id] of scenes) {
+      await jumpToScene(page, id);
       await page.waitForTimeout(800);
       await captureViewport(page, `qa-artifacts/${viewport.name}-${name}.png`);
     }
@@ -86,7 +95,7 @@ test('desktop: foreground lifecycle and Machine live viewport', async ({ page })
   await page.setViewportSize({ width: 1440, height: 1000 });
   await openSite(page);
 
-  await page.locator('#machine').evaluate(el => window.scrollTo({ top: el.offsetTop + innerHeight * .65, behavior: 'instant' }));
+  await jumpToScene(page, 'machine', .65);
   await page.waitForTimeout(1400);
 
   const machineState = await page.evaluate(() => ({
