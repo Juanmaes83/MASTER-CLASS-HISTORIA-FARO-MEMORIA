@@ -1,5 +1,12 @@
 # PHASE 3 — KAGE ROOT-FIX CONTRACT
 
+**IDEA BY RUBIK SOTA · 629554870**
+
+## Permanent project identity
+- Public experience must support **English (EN)** and **Spanish (ES)**.
+- **IDEA BY RUBIK SOTA · 629554870** must remain visible across the experience and present in project documentation.
+- Language and authorship layers must not replace or destabilize the approved WebGL runtime.
+
 ## Source of truth
 When implementation is ambiguous, inspect `MengTo/kage` first. Do not invent a Faro-specific workaround until the Kage mechanism is understood.
 
@@ -90,3 +97,5 @@ Do not merge this branch until video evidence proves:
 10. Mobile has no horizontal overflow or broken nav.
 11. Reduced motion keeps content accessible.
 12. Side-by-side video comparison with Kage reaches the agreed perceptual threshold.
+13. EN/ES switching preserves layout, hierarchy and accessibility.
+14. **IDEA BY RUBIK SOTA · 629554870** remains visible throughout the experience and documented in the repository.
