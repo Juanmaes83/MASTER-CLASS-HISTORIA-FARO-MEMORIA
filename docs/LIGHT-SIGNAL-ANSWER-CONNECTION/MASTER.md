@@ -738,30 +738,37 @@ Antes de mergear cambios de Support:
 - [x] Send a Signal
 - [x] Another Light Answers
 - [x] Another Station — carta nocturna primera versión
-- [x] primeros módulos LISTEN / LEARN
+- [x] LISTEN Discovery — YOU ARE NOT THE ONLY SIGNAL
+- [x] Listening Room diferenciada
+- [x] Record Your Signal — grabación local con MediaRecorder
+- [x] Free Speak + 60 Second Signal
+- [x] audio preview / pause / resume / stop
+- [x] delete / re-record / download local
+- [x] privacy selector demo — PRIVATE funcional
+- [x] fallback escrito / permisos de micrófono
+- [x] navegación interna BACK / X diferenciada
+- [x] primeros módulos Voices / Workshop / Radio / Learn
 - [x] radio técnica demo
 - [x] EN / ES
 - [x] autoría persistente
+- [x] FASE A — DISCOVERY + RECORD mergeada a `main`
 
 ## SIGUIENTE FASE PRIORITARIA
 
-### FASE A — DISCOVERY + RECORD
+### FASE B — PODCAST WORKSHOP
 
-- [ ] elevar descubrimiento de LISTEN
-- [ ] YOU ARE NOT THE ONLY SIGNAL
-- [ ] nueva landing/room LISTEN
-- [ ] Record Your Signal
-- [ ] MediaRecorder local
-- [ ] audio preview
-- [ ] pause / resume / stop
-- [ ] delete / re-record
-- [ ] privacy selector demo
-- [ ] fallback de permisos
-- [ ] QA desktop / mobile / EN / ES
+- [ ] activar SOLO como flujo de taller completo sobre la grabadora local existente
+- [ ] implementar GUIDED con prompts secuenciales
+- [ ] implementar estructura BEFORE THE STORM → THE SIGNAL → THE SILENCE → ANOTHER LIGHT
+- [ ] implementar CONVERSATION como experiencia guiada para dos personas en la primera versión local/demo
+- [ ] implementar GROUP como experiencia de taller moderado en primera versión local/demo
+- [ ] temporización y progreso de sesión
+- [ ] estructura visual y navegación propia de cada modalidad
+- [ ] conservar privacidad local por defecto
+- [ ] QA desktop / mobile / EN / ES / BACK / X
 
 Después:
 
-- [ ] FASE B — Podcast Workshop
 - [ ] FASE C — Library + Radio
 - [ ] FASE D — Learn Connected
 - [ ] FASE E — Association Flow
