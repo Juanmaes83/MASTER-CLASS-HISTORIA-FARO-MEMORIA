@@ -139,8 +139,14 @@ function returnToStations(){
       updateLabel();
       return;
     }
-    const support=q('#support-trigger');
-    if(support){support.click();}
+    const afterlight=q('#afterlight');
+    if(afterlight){
+      window.scrollTo({top:afterlight.offsetTop+Math.min(afterlight.offsetHeight*.38,420),behavior:'auto'});
+    }
+    setTimeout(()=>{
+      const support=q('#support-trigger');
+      if(support&&!support.hidden) support.click();
+    },260);
   },180);
 }
 
