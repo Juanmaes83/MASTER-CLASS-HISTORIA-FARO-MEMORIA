@@ -1,0 +1,46 @@
+/* VISUAL PREMIUM PASS — Kage principles applied to Faro without changing narrative/product flows */
+.storytelling-edition{--keeper-reveal:0;--machine-reveal:0;--premium-ground:.8;--premium-haze:.72}
+
+/* World atmosphere lives between WebGL and editorial content. */
+#premium-world{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden;isolation:isolate}
+#premium-world .premium-horizon{position:absolute;left:-8vw;right:-8vw;bottom:12vh;height:32vh;opacity:var(--premium-haze);background:linear-gradient(180deg,transparent 0,rgba(22,42,47,.035) 20%,rgba(17,34,39,.11) 55%,rgba(4,10,13,.48) 100%);filter:blur(12px);mix-blend-mode:screen;transform:translateY(3vh)}
+#premium-world .premium-sea-breath{position:absolute;left:-10vw;right:-10vw;bottom:-1vh;height:29vh;opacity:.62;background:repeating-linear-gradient(176deg,transparent 0 11px,rgba(131,170,174,.035) 12px 13px,transparent 14px 29px),linear-gradient(180deg,transparent,rgba(5,16,22,.32) 45%,rgba(2,8,12,.82));filter:blur(.8px);mask-image:linear-gradient(to top,#000 0 58%,transparent 100%)}
+#premium-world .premium-rock-bank{position:absolute;left:-5vw;right:-6vw;bottom:-7vh;height:32vh;opacity:var(--premium-ground);filter:drop-shadow(0 -22px 34px rgba(0,0,0,.38));background:linear-gradient(174deg,transparent 0 42%,rgba(6,11,13,.95) 42.5% 100%);clip-path:polygon(0 64%,6% 43%,12% 54%,18% 30%,25% 50%,32% 39%,39% 57%,48% 34%,56% 52%,64% 33%,72% 48%,80% 27%,87% 49%,94% 36%,100% 57%,100% 100%,0 100%)}
+#premium-world .premium-rock-bank:after{content:"";position:absolute;inset:18% 0 0;background:radial-gradient(ellipse at 14% 60%,rgba(28,41,43,.38),transparent 21%),radial-gradient(ellipse at 46% 72%,rgba(29,42,44,.28),transparent 23%),radial-gradient(ellipse at 81% 61%,rgba(25,38,41,.32),transparent 22%);mix-blend-mode:screen;opacity:.35}
+#premium-world .premium-mist{position:absolute;left:-20vw;right:-20vw;bottom:4vh;height:20vh;background:radial-gradient(ellipse at 28% 70%,rgba(111,145,149,.10),transparent 27%),radial-gradient(ellipse at 67% 61%,rgba(105,140,145,.08),transparent 30%),radial-gradient(ellipse at 90% 78%,rgba(116,148,151,.06),transparent 22%);filter:blur(20px);opacity:.66;animation:premiumMist 13s ease-in-out infinite alternate}
+@keyframes premiumMist{from{transform:translate3d(-1.8vw,0,0) scale(1)}to{transform:translate3d(2vw,-.8vh,0) scale(1.035)}}
+body[data-premium-section="stair"] #premium-world .premium-rock-bank,body[data-premium-section="machine"] #premium-world .premium-rock-bank,body[data-premium-section="beam"] #premium-world .premium-rock-bank{opacity:.24}
+body[data-premium-section="machine"] #premium-world .premium-sea-breath,body[data-premium-section="stair"] #premium-world .premium-sea-breath{opacity:.18}
+body[data-premium-section="afterlight"] #premium-world .premium-horizon{opacity:.42}
+
+/* 01 — keeper image becomes a memory aperture, not a rectangular card. */
+.storytelling-edition .keeper-grid{align-items:center}
+.storytelling-edition .keeper-window{overflow:visible;outline:0;box-shadow:none;isolation:isolate;transform:translate3d(0,0,0)}
+.storytelling-edition .keeper-window:before{content:"";position:absolute;z-index:-1;inset:3% -7% -7% -5%;background:radial-gradient(ellipse at 52% 48%,rgba(79,111,117,.14),rgba(5,10,13,.12) 40%,transparent 73%);filter:blur(24px);opacity:calc(.25 + var(--keeper-reveal)*.55)}
+.storytelling-edition .keeper-window:after{content:"";position:absolute;z-index:4;left:-8%;right:-9%;bottom:-8%;height:30%;background:linear-gradient(177deg,transparent 0 35%,rgba(4,9,11,.94) 38% 100%),repeating-linear-gradient(82deg,transparent 0 15px,rgba(58,82,75,.32) 16px 18px,transparent 19px 31px);clip-path:polygon(0 66%,8% 45%,16% 61%,24% 38%,34% 58%,44% 49%,54% 67%,64% 41%,75% 56%,84% 37%,92% 60%,100% 50%,100% 100%,0 100%);opacity:calc(.22 + var(--keeper-reveal)*.68);filter:blur(.35px)}
+.storytelling-edition .keeper-plate{inset:-4% -4% -3%;transform:translate3d(calc((1 - var(--keeper-reveal))*-2.6vw),calc((1 - var(--keeper-reveal))*1.5vh),0) scale(calc(.965 + var(--keeper-reveal)*.055));transform-origin:52% 48%;opacity:calc(.08 + var(--keeper-reveal)*.92);filter:saturate(.80) contrast(.93) brightness(.77) sepia(.04);box-shadow:none;-webkit-mask-image:radial-gradient(ellipse at 52% 48%,#000 0 49%,rgba(0,0,0,.98) 59%,rgba(0,0,0,.78) 70%,rgba(0,0,0,.28) 83%,transparent 98%);mask-image:radial-gradient(ellipse at 52% 48%,#000 0 49%,rgba(0,0,0,.98) 59%,rgba(0,0,0,.78) 70%,rgba(0,0,0,.28) 83%,transparent 98%);transition:filter .35s linear}
+.storytelling-edition .keeper-plate:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 51% 49%,rgba(103,150,166,.05),transparent 26%),linear-gradient(105deg,rgba(7,16,20,.42),transparent 42%,rgba(168,116,63,.06) 72%,rgba(5,10,12,.48));mix-blend-mode:color;pointer-events:none}
+.storytelling-edition .keeper-plate:after{background:radial-gradient(ellipse at 52% 48%,transparent 0 46%,rgba(3,8,11,.16) 63%,rgba(3,7,10,.86) 98%),linear-gradient(180deg,rgba(3,6,9,.03) 30%,rgba(3,6,9,.55) 100%)}
+.storytelling-edition .window-label{left:5%;bottom:2%;opacity:calc(.1 + var(--keeper-reveal)*.52);text-shadow:0 2px 16px #030608}
+
+/* 02 — machine live viewport becomes an optical aperture in the same shot. */
+.storytelling-edition .live-window{isolation:isolate;transform:translate3d(0,0,0)}
+.storytelling-edition .live-frame{outline:0;height:min(69vh,710px);overflow:hidden;background:transparent;opacity:calc(.2 + var(--machine-reveal)*.8);-webkit-mask-image:radial-gradient(ellipse at 53% 49%,#000 0 61%,rgba(0,0,0,.98) 70%,rgba(0,0,0,.62) 84%,transparent 99%);mask-image:radial-gradient(ellipse at 53% 49%,#000 0 61%,rgba(0,0,0,.98) 70%,rgba(0,0,0,.62) 84%,transparent 99%);filter:saturate(.88) contrast(.96) brightness(.98);transform:scale(calc(.985 + var(--machine-reveal)*.015));transform-origin:50% 50%}
+.storytelling-edition .live-window:before{content:"";position:absolute;inset:-4% -3% 9%;pointer-events:none;z-index:3;border-radius:50%;background:radial-gradient(ellipse at 55% 50%,transparent 0 57%,rgba(202,221,217,.055) 62%,rgba(217,177,111,.045) 69%,transparent 77%);filter:blur(2px);opacity:var(--machine-reveal)}
+.storytelling-edition .live-window:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:4;background:linear-gradient(102deg,transparent 0 43%,rgba(186,216,213,.045) 44% 45%,transparent 47% 66%,rgba(222,184,119,.035) 67%,transparent 70%);mix-blend-mode:screen;opacity:calc(var(--machine-reveal)*.8)}
+.storytelling-edition .live-meta{opacity:calc(.25 + var(--machine-reveal)*.58);padding-inline:3%;transform:translateY(-3px)}
+
+/* Existing Kage-style foregrounds receive more natural silhouette/detail. */
+.storytelling-edition .fg-rock{width:44vw;height:39vh;left:-9vw;bottom:-11vh;background:radial-gradient(ellipse at 42% 74%,rgba(26,37,39,.98),rgba(8,13,15,.97) 54%,transparent 57%);clip-path:polygon(0 100%,0 63%,10% 44%,19% 57%,29% 34%,40% 58%,52% 43%,63% 64%,74% 38%,85% 55%,100% 49%,100% 100%)}
+.storytelling-edition .fg-grass{left:-6vw;width:58vw;height:29vh;opacity:.9;background:repeating-linear-gradient(79deg,transparent 0 10px,rgba(57,87,78,.17) 11px 12px,rgba(75,106,92,.30) 13px 14px,transparent 15px 25px);mask:linear-gradient(to top,#000 0 56%,rgba(0,0,0,.7) 74%,transparent 100%)}
+.storytelling-edition .fg-horizon{height:24vh;background:linear-gradient(180deg,transparent,rgba(8,16,18,.52) 46%,rgba(4,10,12,.95) 88%)}
+
+@media(max-width:900px){
+ #premium-world .premium-rock-bank{height:25vh;bottom:-5vh;opacity:.58}
+ #premium-world .premium-sea-breath{height:22vh}
+ .storytelling-edition .keeper-window{overflow:visible}
+ .storytelling-edition .keeper-plate{inset:-2%;-webkit-mask-image:radial-gradient(ellipse at 52% 48%,#000 0 55%,rgba(0,0,0,.86) 73%,transparent 98%);mask-image:radial-gradient(ellipse at 52% 48%,#000 0 55%,rgba(0,0,0,.86) 73%,transparent 98%)}
+ .storytelling-edition .keeper-window:after{bottom:-5%;height:25%}
+ .storytelling-edition .live-frame{height:min(56vh,520px)}
+}
+@media(prefers-reduced-motion:reduce){#premium-world .premium-mist{animation:none}.storytelling-edition{--keeper-reveal:1;--machine-reveal:1}}

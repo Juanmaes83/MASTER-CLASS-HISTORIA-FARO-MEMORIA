@@ -82,6 +82,40 @@ jobs:
             test-results/
           if-no-files-found: ignore
 
+  visual-premium:
+    name: VISUAL PREMIUM KAGE PASS
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install --save-dev @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve candidate
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-visual-premium-http.log 2>&1 &
+          sleep 2
+      - name: Run premium visual integration checks
+        run: |
+          mkdir -p qa-artifacts
+          npx playwright test tests/visual-premium.spec.js
+      - name: Upload premium visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-premium-evidence
+          path: |
+            qa-artifacts/visual-premium/
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+
   phase-a-flow:
     name: PHASE A HUMAN FLOW
     runs-on: ubuntu-latest
