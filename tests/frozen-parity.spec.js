@@ -34,7 +34,7 @@ async function metrics(page) {
       }];
     })),
     runtime: window.__FARO_QA__,
-  }), sceneIds);
+  }), ids);
 }
 
 async function captureRun(browser, url, viewport, label) {
@@ -51,14 +51,11 @@ async function captureRun(browser, url, viewport, label) {
     await page.waitForTimeout(650);
 
     const tag = String(Math.round(p * 100)).padStart(3, '0');
-    await page.screenshot({
-      path: `qa-artifacts/frozen-parity/${viewport.name}-${tag}-${label}.png`,
-    });
+    await page.screenshot({ path: `qa-artifacts/frozen-parity/${viewport.name}-${tag}-${label}.png` });
 
     states.push(await page.evaluate(() => ({
       y: scrollY,
-      active: [...document.querySelectorAll('#rail button')]
-        .findIndex((x) => x.classList.contains('on')),
+      active: [...document.querySelectorAll('#rail button')].findIndex((x) => x.classList.contains('on')),
     })));
   }
 
