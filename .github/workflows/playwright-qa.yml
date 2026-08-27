@@ -12,7 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Support candidate
+        uses: actions/checkout@v4
+      - name: Checkout frozen Faro baseline
+        uses: actions/checkout@v4
+        with:
+          ref: be966615347e8844bfcddf30034dd2b2a2c8330c
+          path: _frozen
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -21,10 +27,12 @@ jobs:
           npm init -y
           npm install --save-dev @playwright/test@1.55.0
           npx playwright install --with-deps chromium
-      - name: Serve site
+      - name: Serve Support and frozen Faro
         run: |
-          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-http.log 2>&1 &
-          echo $! > /tmp/faro-http.pid
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-support-http.log 2>&1 &
+          echo $! > /tmp/faro-support-http.pid
+          python3 -m http.server 4174 --bind 127.0.0.1 --directory _frozen > /tmp/faro-frozen-http.log 2>&1 &
+          echo $! > /tmp/faro-frozen-http.pid
           sleep 2
       - name: Run browser QA
         run: |
