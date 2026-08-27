@@ -40,43 +40,22 @@ Frozen backup branches also remain available:
 
 ## Social experience master
 
-The living product/documentation source for the support layer is:
+The single living product/documentation source for THE LAST LIGHTHOUSE support and social-experience layer is:
 
-- **Current approved decisions — read first:** `docs/LIGHT-SIGNAL-ANSWER-CONNECTION/CURRENT-APPROVED-DECISIONS.md`
-- **Living Master:** `docs/LIGHT-SIGNAL-ANSWER-CONNECTION/MASTER.md`
-- **Original source preserved:** `docs/LIGHT-SIGNAL-ANSWER-CONNECTION/SOURCE-ORIGINAL.txt`
+- **Master:** `docs/LIGHT-SIGNAL-ANSWER-CONNECTION/MASTER.md`
 
-`CURRENT-APPROVED-DECISIONS.md` is the canonical decision record for the present implementation. If an older exploratory note in `MASTER.md` conflicts with it, the current approved decisions take precedence until the Master is consolidated again.
+The Master is the only current source of truth for:
 
-The project is organized around:
+- **LIGHT → SIGNAL → ANSWER → CONNECTION**
+- the five product doors **EXPERIENCE → LISTEN → LEARN → SIGNAL → CONNECT**
+- the five support actions implemented as **4 activators + 1 cinematic event**
+- Rule 0 / frozen Faro architecture
+- support privacy and safety rules
+- current visual decisions for `ANOTHER LIGHT` and `ANOTHER STATION`
+- QA requirements
+- the current roadmap, including LISTEN + LEARN as the next priority
 
-**LIGHT → SIGNAL → ANSWER → CONNECTION**
-
-and the five core product doors:
-
-**EXPERIENCE → LISTEN → LEARN → SIGNAL → CONNECT**
-
-Current product state:
-
-- **EXPERIENCE** — cinematic Faro is the protected core.
-- **SIGNAL / CONNECT** — first support layer under active development.
-- **LISTEN / LEARN** — approved next priority to complete THE LAST LIGHTHOUSE as a broader storytelling + listening experience.
-
-The current support sequence intentionally contains **five actions but four clickable activators**:
-
-- Coast → `WEATHER INSIDE →`
-- Keeper → silence
-- Stair → `ONE STEP →`
-- Machine → silence
-- Beam → `SEND A SIGNAL →`
-- `ANOTHER LIGHT ANSWERS` → cinematic consequence, not a button
-- Afterlight → `ANOTHER STATION →`
-
-The second light must be a memorable symbolic event — **there was one light; now there are two** — while explicitly stating that it is not a real human reply. `ANOTHER STATION` should read visually as a night navigation chart of real human/professional support rather than an administrative phone list.
-
-For now, intimate emotional responses are not being turned into server-side profiles, CRM records or adaptive emotional histories. Privacy-first local/session behavior remains the rule unless a separate explicit product/safeguarding decision is approved.
-
-All future support, podcast, workshop, participation and institutional improvements should be added to the MASTER using its improvement template rather than appended as loose notes.
+Documentation governance is explicit: update the existing Master for decisions in this scope; if the change is large, rebuild and replace the Master while preserving valid content and removing obsolete material. Do not create parallel `CURRENT`, `FINAL`, `V2`, `V3` or `LATEST` decision documents for the same scope.
 
 ## Project authorship
 
