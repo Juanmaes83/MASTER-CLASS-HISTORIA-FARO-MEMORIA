@@ -8,7 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate:
+  faro-parity:
+    name: FARO PARITY
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -30,19 +31,85 @@ jobs:
       - name: Serve Support and frozen Faro
         run: |
           python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-support-http.log 2>&1 &
-          echo $! > /tmp/faro-support-http.pid
           python3 -m http.server 4174 --bind 127.0.0.1 --directory _frozen > /tmp/faro-frozen-http.log 2>&1 &
-          echo $! > /tmp/faro-frozen-http.pid
           sleep 2
-      - name: Run browser QA
+      - name: Compare frozen Faro vs Support
         run: |
           mkdir -p qa-artifacts
-          npx playwright test
-      - name: Upload screenshots and report
+          npx playwright test tests/frozen-parity.spec.js
+      - name: Upload parity evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-playwright-qa
+          name: faro-parity-evidence
+          path: |
+            qa-artifacts/frozen-parity/
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+
+  faro-smoke:
+    name: FARO SMOKE
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout Support candidate
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install --save-dev @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve Support
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-support-http.log 2>&1 &
+          sleep 2
+      - name: Run Faro smoke
+        run: |
+          mkdir -p qa-artifacts
+          npx playwright test tests/lighthouse.spec.js
+      - name: Upload smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: faro-smoke-evidence
+          path: |
+            qa-artifacts/
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+
+  support-flow:
+    name: SUPPORT FLOW
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout Support candidate
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install --save-dev @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve Support
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/faro-support-http.log 2>&1 &
+          sleep 2
+      - name: Run Support interactions
+        run: |
+          mkdir -p qa-artifacts
+          npx playwright test tests/support-actions.spec.js
+      - name: Upload support evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: support-flow-evidence
           path: |
             qa-artifacts/
             playwright-report/
