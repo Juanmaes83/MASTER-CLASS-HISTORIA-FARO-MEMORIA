@@ -103,3 +103,37 @@ test('Spanish copy and written fallback remain available', async ({page})=>{
   await expect(page.locator('#phasea-write-text')).toBeVisible();
   await expect(page.locator('#phasea-write-text')).toHaveAttribute('placeholder',/Escribe sólo/);
 });
+
+test('Back stays inside Another Light while X remains a full exit', async ({page})=>{
+  await mockAudio(page);await ready(page);await openFromAnotherLight(page);
+  const back=page.locator('#phasea-back');
+  await expect(back).toBeVisible();
+  await expect(back).toContainText('BACK TO ANOTHER STATION');
+
+  await page.locator('#record-hero').click();
+  await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','record');
+  await expect(back).toContainText('BACK TO LISTEN');
+  await back.click();
+  await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','listen');
+
+  await page.locator('[data-go="voices"]').click();
+  await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','voices');
+  await page.locator('.learn-link').first().click();
+  await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','learn');
+  await expect(back).toContainText('BACK TO VOICES');
+  await back.click();
+  await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','voices');
+  await back.click();
+  await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','listen');
+
+  await back.click();
+  await expect(page.locator('#phasea-overlay')).not.toHaveClass(/open/);
+  await expect(page.locator('#support-deck')).toHaveClass(/open/,{timeout:3000});
+  await expect(page.locator('.station-chart-v2')).toBeVisible();
+
+  await page.locator('.hero-doors [data-room="listen"]').click();
+  await expect(page.locator('#phasea-overlay')).toHaveClass(/open/);
+  await page.locator('#phasea-close').click();
+  await expect(page.locator('#phasea-overlay')).not.toHaveClass(/open/);
+  await expect(page.locator('#support-deck')).not.toHaveClass(/open/);
+});
