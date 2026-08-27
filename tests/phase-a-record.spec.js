@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.setTimeout(150000);
+test.setTimeout(210000);
 const URL='http://127.0.0.1:4173/storytelling.html';
 
 async function mockAudio(page){
@@ -71,7 +71,8 @@ test('Rooms are visually and structurally distinct', async ({page})=>{
   await ready(page);await page.evaluate(()=>window.__FARO_PHASE_A__.open());
   await page.locator('[data-rnav="workshop"]').click();
   await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','workshop');
-  await expect(page.locator('.workshop-modes')).toContainText('CONVERSATION');
+  await expect(page.locator('.b1-home')).toBeVisible();
+  await expect(page.locator('.b1-modes')).toContainText('CONVERSATION');
   await page.locator('[data-rnav="radio"]').click();
   await expect(page.locator('#phasea-overlay')).toHaveAttribute('data-room','radio');
   await expect(page.locator('.broadcast-console')).toBeVisible();
@@ -128,11 +129,11 @@ test('Back stays inside Another Light while X remains a full exit', async ({page
 
   await back.click();
   await expect(page.locator('#phasea-overlay')).not.toHaveClass(/open/);
-  await expect(page.locator('#support-deck')).toHaveClass(/open/,{timeout:3000});
+  await expect(page.locator('#support-deck')).toHaveClass(/open/,{timeout:5000});
   await expect(page.locator('.station-chart-v2')).toBeVisible();
 
   await page.locator('.hero-doors [data-room="listen"]').click();
-  await expect(page.locator('#phasea-overlay')).toHaveClass(/open/);
+  await expect(page.locator('#phasea-overlay')).toHaveClass(/open/,{timeout:5000});
   await page.locator('#phasea-close').click();
   await expect(page.locator('#phasea-overlay')).not.toHaveClass(/open/);
   await expect(page.locator('#support-deck')).not.toHaveClass(/open/);

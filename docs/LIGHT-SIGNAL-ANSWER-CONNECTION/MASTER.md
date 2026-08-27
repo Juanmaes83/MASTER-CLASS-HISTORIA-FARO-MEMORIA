@@ -368,7 +368,7 @@ Dos personas:
 La interfaz proporciona estructura, tiempo, preguntas y grabación. No media clínicamente ni analiza emociones.
 
 ## GROUP
-Taller remoto o presencial, orientativamente 4–8 personas y moderador.
+Taller local o presencial, orientativamente 4–8 personas y moderador en B1.
 
 Temas posibles:
 
@@ -378,6 +378,33 @@ Temas posibles:
 - Family
 - Loneliness
 - Addiction and emotional pain
+
+### DECISIÓN DE ALCANCE — B1 / B2
+
+**B1 es la única Fase B que se implementa en el alcance actual.**
+
+B1 incluye:
+
+- SOLO sobre la grabadora local aprobada,
+- GUIDED con cuatro fragmentos locales,
+- CONVERSATION en un mismo dispositivo con grabación compartida,
+- GROUP local/demo con un único micrófono compartido,
+- prompts,
+- temporización,
+- progreso,
+- revisión y descarga local.
+
+**B2 — workshop remoto queda sólo documentado y NO se implementará en el alcance actual.**
+
+B2 podría contemplar en otro proyecto futuro:
+
+- WebRTC,
+- salas multiusuario remotas,
+- cuentas/invitaciones,
+- moderación remota,
+- grabación multipista o distribuida.
+
+No se desarrollará ahora porque no es necesario para demostrar la misión principal: **crear una forma moderna y segura de hablar**.
 
 ---
 
@@ -587,7 +614,7 @@ Si quiero, la señal puede llegar a una persona real.
 
 # 21. ORDEN DE IMPLEMENTACIÓN APROBADO
 
-## FASE A — DISCOVERY + RECORD
+## FASE A — DISCOVERY + RECORD — IMPLEMENTADA
 
 1. hacer LISTEN visible después de Another Light / Another Station,
 2. crear nueva entrada LISTEN,
@@ -597,15 +624,31 @@ Si quiero, la señal puede llegar a una persona real.
 6. selector Privacy/Consent en modo demo,
 7. no backend de audio todavía.
 
-## FASE B — PODCAST WORKSHOP
+## FASE B1 — PODCAST WORKSHOP LOCAL/DEMO — EN IMPLEMENTACIÓN
 
-- Solo,
-- Guided,
-- Conversation,
-- Group,
+- SOLO reutiliza la Recording Room aprobada,
+- GUIDED graba cuatro luces: BEFORE THE STORM → THE SIGNAL → THE SILENCE → ANOTHER LIGHT,
+- CONVERSATION funciona para dos voces en un mismo dispositivo,
+- GROUP funciona como taller moderado local/demo de 4–8 personas,
 - prompts,
 - temporización,
-- estructura de sesión.
+- progreso,
+- revisión,
+- descarga local,
+- privacidad local por defecto.
+
+## FASE B2 — PODCAST WORKSHOP REMOTO — DOCUMENTADA / NO IMPLEMENTAR
+
+No se implementarán ahora:
+
+- WebRTC,
+- salas remotas,
+- multiusuario remoto,
+- cuentas,
+- invitaciones,
+- grabación distribuida.
+
+Se mantiene únicamente documentada como posible evolución futura fuera del alcance actual.
 
 ## FASE C — LIBRARY + RADIO
 
@@ -722,7 +765,12 @@ Antes de mergear cambios de Support:
 12. grabar / pausar / detener / reproducir / borrar / regrabar,
 13. comprobar que audio local no se sube,
 14. validar fallback cuando micrófono es denegado,
-15. revisión visual humana.
+15. Podcast Workshop B1: Solo / Guided / Conversation / Group,
+16. Guided: cuatro fragmentos y review,
+17. Conversation: turnos + grabación local compartida,
+18. Group: tamaño / tema / prompts + grabación local compartida,
+19. BACK / X,
+20. revisión visual humana.
 
 # **Cualquier regresión estructural visual = FAIL / NO MERGE.**
 
@@ -753,21 +801,30 @@ Antes de mergear cambios de Support:
 - [x] autoría persistente
 - [x] FASE A — DISCOVERY + RECORD mergeada a `main`
 
-## SIGUIENTE FASE PRIORITARIA
+## EN IMPLEMENTACIÓN — PR #8
 
-### FASE B — PODCAST WORKSHOP
+### FASE B1 — PODCAST WORKSHOP LOCAL/DEMO
 
-- [ ] activar SOLO como flujo de taller completo sobre la grabadora local existente
-- [ ] implementar GUIDED con prompts secuenciales
-- [ ] implementar estructura BEFORE THE STORM → THE SIGNAL → THE SILENCE → ANOTHER LIGHT
-- [ ] implementar CONVERSATION como experiencia guiada para dos personas en la primera versión local/demo
-- [ ] implementar GROUP como experiencia de taller moderado en primera versión local/demo
-- [ ] temporización y progreso de sesión
-- [ ] estructura visual y navegación propia de cada modalidad
-- [ ] conservar privacidad local por defecto
-- [ ] QA desktop / mobile / EN / ES / BACK / X
+- [x] arquitectura visual diferenciada Solo / Guided / Conversation / Group
+- [x] SOLO reutiliza Recording Room local
+- [x] GUIDED — cuatro prompts / cuatro luces
+- [x] grabación local independiente por fragmento GUIDED
+- [x] replay / re-record / descarga por fragmento
+- [x] review “YOUR STORY HAS FOUR LIGHTS”
+- [x] reproducción secuencial de las cuatro luces
+- [x] CONVERSATION — dos voces / turnos / prompts / timer
+- [x] CONVERSATION — grabación local compartida + review/download
+- [x] GROUP — 4 / 6 / 8 participantes
+- [x] GROUP — tema + prompts + moderador + timer
+- [x] GROUP — grabación local compartida + review/download
+- [x] EN / ES
+- [ ] QA completo + revisión visual humana + merge
 
-Después:
+### FASE B2 — REMOTO
+
+- [x] decisión documentada: **NO IMPLEMENTAR EN EL ALCANCE ACTUAL**
+
+Después de aprobar y mergear B1:
 
 - [ ] FASE C — Library + Radio
 - [ ] FASE D — Learn Connected
