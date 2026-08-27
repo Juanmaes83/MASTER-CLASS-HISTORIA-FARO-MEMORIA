@@ -40,10 +40,10 @@ THE LAST LIGHTHOUSE se organiza en cinco puertas:
 La experiencia cinematográfica y narrativa del Faro. Es el núcleo protegido y ya construido.
 
 ## 02 — LISTEN
-Lighthouse Radio, historias reales, The Listening Room y voces desde distintas perspectivas.
+Escuchar y **ser escuchado**. Lighthouse Radio, historias reales, The Listening Room, Record Your Signal, sesiones y talleres de podcast.
 
 ## 03 — LEARN
-Microtalleres, Lighthouse Sessions y herramientas para aprender a pedir ayuda, escuchar y acompañar.
+Microtalleres y herramientas para aprender a pedir ayuda, escuchar, acompañar y conectar otra estación cuando es necesario.
 
 ## 04 — SIGNAL
 Herramientas que ayudan a iniciar una conversación humana.
@@ -51,11 +51,15 @@ Herramientas que ayudan a iniciar una conversación humana.
 ## 05 — CONNECT
 Ayuda humana y profesional real.
 
-**Estado actual:**
+Principio nuevo aprobado:
 
-- EXPERIENCE — núcleo avanzado y protegido.
-- SIGNAL / CONNECT — primera capa ya implementada y en mejora.
-- LISTEN / LEARN — siguiente prioridad de producto.
+# **LISTEN no significa sólo escuchar contenido. Significa escuchar + tener una forma segura de hablar.**
+
+El podcast no se concibe principalmente como medio para conseguir audiencia. Se concibe como **herramienta de expresión, conversación, participación y posible primer contacto**.
+
+Objetivo:
+
+> No convertir a las personas en podcasters. Darles una razón y una forma segura de hablar.
 
 ---
 
@@ -118,39 +122,26 @@ Por tanto, el usuario debe encontrar:
 
 # 5. VISIBILIDAD DE LOS ACTIVADORES — APROBADO
 
-Los activadores actuales son demasiado fáciles de perder visualmente.
+Los activadores deben entrar en campo visual como señales del mundo, no como CTA publicitarios.
 
-Mejora aprobada:
+Reglas aprobadas:
 
-- aumentar presencia aproximadamente un **25–35 %** respecto a la implementación actual,
-- mantener elegancia y contención,
-- añadir una señal luminosa propia del lenguaje del Faro,
-- al aparecer: **flash breve → halo sutil → reposo**,
-- opcionalmente un segundo recordatorio si el usuario no interactúa,
-- nunca parpadeo constante ni comportamiento de CTA publicitario.
+- presencia aumentada aproximadamente un **25–35 %**,
+- movimiento breve en campo visual,
+- destello / señal fugaz / barrido sutil,
+- **flash breve → halo → reposo**,
+- posible segundo recordatorio si no hay interacción,
+- nunca parpadeo constante.
 
 Sensación buscada:
 
 > **“Acabo de ver una señal.”**
 
-No:
-
-> “Ha aparecido un botón.”
-
-La revelación progresiva es obligatoria:
-
-**Coast → señal / Keeper → silencio / Stair → señal / Machine → silencio / Beam → señal / Afterlight → estación.**
-
 ---
 
 # 6. WEATHER INSIDE
 
-**Objetivo:** permitir expresar cómo se siente una persona sin diagnosticarla.
-
-Pregunta:
-
-**HOW IS THE WEATHER INSIDE?**  
-**¿QUÉ TIEMPO HACE POR DENTRO?**
+Objetivo: permitir expresar cómo se siente una persona sin diagnosticarla.
 
 Opciones no clínicas:
 
@@ -161,340 +152,524 @@ Opciones no clínicas:
 
 Reglas:
 
-- no preguntar «¿tienes depresión?»,
-- no usar puntuaciones clínicas,
-- no convertir la respuesta en diagnóstico,
-- no crear perfiles emocionales,
-- no adaptar por ahora el recorrido según respuestas previas.
-
-La respuesta puede existir únicamente en sesión/local para comportamiento inmediato de interfaz cuando sea necesario.
+- no diagnóstico,
+- no score,
+- no perfil emocional,
+- no personalización del recorrido basada en respuestas por ahora.
 
 ---
 
 # 7. ONE STEP
 
-**Objetivo:** transformar el ascenso del Faro en una acción pequeña y posible.
-
-Idea central:
+Objetivo: transformar el ascenso en una acción pequeña y posible.
 
 > **One step is not the whole journey. It is only the next one.**
 
-Acciones actuales:
+Acciones:
 
 - hablar con una persona,
 - pedir compañía,
 - escribir una frase,
 - contactar con ayuda.
 
-El usuario no tiene que resolver todo el viaje. Sólo elegir el siguiente paso.
-
 ---
 
 # 8. SEND A SIGNAL
 
-**Objetivo:** ayudar a iniciar una conversación humana.
+Objetivo: ayudar a iniciar una conversación humana.
 
-Momento narrativo: **THE BEAM**.
+Faro prepara una primera frase, pero:
 
-Opciones iniciales:
+- no la envía automáticamente,
+- no la guarda en servidor,
+- el usuario controla copiar/compartir.
 
-- I need someone to listen. / Necesito que alguien me escuche.
-- I do not want to be alone right now. / No quiero estar solo ahora mismo.
-- I am struggling and need company. / Me está costando y necesito compañía.
-
-La experiencia prepara una primera frase sencilla.
-
-Regla:
-
-**No terapia. No diagnóstico. Sólo ayudar a abrir una conversación humana.**
-
-Privacidad:
-
-- Faro no envía automáticamente el mensaje,
-- Faro no almacena el texto en servidor,
-- el usuario puede copiar o compartir externamente bajo su control.
+No terapia. No diagnóstico. Sólo apertura de conversación.
 
 ---
 
-# 9. ANOTHER LIGHT ANSWERS — HERO MOMENT APROBADO
+# 9. ANOTHER LIGHT ANSWERS — HERO MOMENT
 
-Este debe ser uno de los grandes **WOW emocionales** de THE LAST LIGHTHOUSE.
+Momento WOW aprobado:
 
-Después de preparar/copiar/compartir una señal:
-
-1. silencio breve de aproximadamente **500–700 ms**,
-2. muy lejos: **FLASH**,
+1. silencio de aproximadamente **500–700 ms**,
+2. **FLASH** lejano,
 3. oscuridad,
 4. segundo **FLASH**,
-5. la luz lejana gana ligeramente presencia,
-6. puede aparecer un segundo haz muy sutil cruzando el horizonte,
-7. sin explosión, fuegos artificiales ni celebración exagerada.
+5. segunda luz gana presencia,
+6. posible segundo haz muy sutil,
+7. sin celebración exagerada.
 
-Idea emocional:
+Idea:
 
 > **There was one light. Now there are two.**
 
-La experiencia debe dejar este recuerdo:
-
-> **“Cuando pedí ayuda apareció otra luz.”**
-
-Después aparece:
-
-### ANOTHER LIGHT
-
-> **A second light appears.**
-
-Y de forma explícita:
+Regla ética:
 
 > **This light is symbolic. It is not a real reply from another person.**
 
-Regla ética obligatoria:
-
-Nunca fingir una respuesta humana cuando no existe una persona real respondiendo.
-
 ---
 
-# 10. ANOTHER STATION — CARTA NOCTURNA DE NAVEGACIÓN
+# 10. ANOTHER STATION — CARTA NOCTURNA
 
-ANOTHER STATION no debe parecer una lista administrativa de teléfonos.
+No debe parecer una lista administrativa de teléfonos.
 
-Debe convertirse en una **carta nocturna de navegación / constelación de estaciones humanas**.
+Debe sentirse como una **carta nocturna de navegación / constelación de estaciones humanas**.
 
-Cada recurso se representa como una baliza o carta luminosa, manteniendo comprensión y acción inmediata.
+Balizas actuales:
 
-Estaciones actuales:
+- LISTEN → Teléfono de la Esperanza
+- LOCAL LIGHT / ALICANTE → Teléfono de la Esperanza Alicante
+- RECOVERY → Proyecto Hombre Alicante
+- CRISIS → 024
+- EMERGENCY → 112
 
-- **LISTEN** → Teléfono de la Esperanza.
-- **LOCAL LIGHT / ALICANTE** → Teléfono de la Esperanza Alicante.
-- **RECOVERY / ADDICTIONS + MENTAL HEALTH** → Proyecto Hombre Alicante.
-- **CRISIS** → Línea 024.
-- **EMERGENCY** → 112.
-
-Los recursos urgentes deben seguir siendo claros y accionables, pero visualmente pertenecer al mismo mundo del Faro.
-
-Los datos de contacto deben verificarse periódicamente con fuentes oficiales antes de una publicación institucional/producción.
+El detalle aparece al seleccionar la baliza.
 
 ---
 
 # 11. DATOS Y PRIVACIDAD — DECISIÓN ACTUAL
 
-Se descarta de momento cualquier arquitectura por niveles de respuesta o perfil emocional.
-
-No añadir ahora:
+No añadir por ahora:
 
 - CRM emocional,
-- perfiles de usuario basados en estado emocional,
+- perfiles,
 - historial emocional,
-- personalización del recorrido por respuestas anteriores,
+- personalización por respuestas,
 - almacenamiento servidor de respuestas íntimas,
-- flujos “contact me” automáticos.
+- contacto automático.
 
-Comportamiento actual:
-
-- WEATHER INSIDE / ONE STEP pueden usar estado local o de sesión sólo si es necesario para la UI inmediata,
-- SEND A SIGNAL no se almacena ni se envía por Faro,
-- ANOTHER LIGHT es sólo un estado visual simbólico,
-- ANOTHER STATION enlaza con recursos humanos/profesionales reales.
-
-Cualquier modelo de datos futuro necesita una decisión explícita nueva de producto, privacidad, safeguarding e instituciones.
+Toda evolución de audio hacia asociación/publicación exige decisión explícita de privacidad, consentimiento y safeguarding.
 
 ---
 
-# 12. SCROLL LOCK — APROBADO
+# 12. SCROLL LOCK
 
-Cuando se abre una acción:
+Cuando se abre Support:
 
 - congelar scroll,
-- no avanzar la cámara,
-- conservar la posición exacta,
-- conservar escena y estado visual,
-- al cerrar volver exactamente al mismo punto.
-
-La capa Support nunca debe cambiar alturas ni timing cinematográfico.
+- congelar cámara,
+- conservar escena,
+- volver exactamente al mismo punto al cerrar.
 
 ---
 
-# 13. LISTEN — SIGUIENTE PRIORIDAD
+# 13. LISTEN — NUEVA DEFINICIÓN APROBADA
 
-## 13.1 LIGHTHOUSE RADIO / VOCES DESDE EL FARO
+LISTEN debe salir del escondite después de ANOTHER LIGHT / ANOTHER STATION.
 
-**Stories from people who found their way back.**  
-**Historias de quienes volvieron a encontrar el rumbo.**
+No puede depender de encontrar un subpanel dentro de otro subpanel.
 
-Estructura posible de cada historia:
+## 13.1 DISCOVERY
 
-1. **THE STORM** — qué ocurrió.
-2. **THE SIGNAL** — qué hizo que la persona pidiera ayuda o que alguien percibiera algo.
-3. **THE WAY BACK** — qué empezó a cambiar.
+Después de ANOTHER LIGHT debe aparecer una revelación clara:
 
-No buscar finales artificialmente felices.
+# **YOU ARE NOT THE ONLY SIGNAL.**
 
-Una historia puede terminar honestamente:
+CTA:
 
-> «Sigo trabajando en ello.»
+### **LISTEN TO ANOTHER LIGHT →**
 
-## 13.2 THE LISTENING ROOM
+En AFTERLIGHT deben quedar claramente visibles:
 
-Una habitación del Faro convertida en archivo de voces.
+- **LISTEN — Hear another signal**
+- **LEARN — Learn how to listen**
+- **CONNECT — Find another station**
 
-Cada punto de luz representa una historia breve de aproximadamente 60–90 segundos.
+Dentro de LISTEN, la entrada recomendada es:
 
-## 13.3 HISTORIAS DESDE DISTINTOS LADOS
+# **SOMEONE IS SPEAKING.**
 
-Perspectivas aprobadas:
+Y cuatro caminos visibles:
 
-### I'VE BEEN THE LIGHTHOUSE
-Persona que pidió ayuda.
-
-### I'VE SEEN THE SIGNAL
-Familiar o amigo que detectó algo.
-
-### I ANSWER SIGNALS
-Voluntario o profesional.
-
-### I'M STILL FINDING MY WAY
-Persona actualmente en proceso.
-
-## 13.4 6 SECOND SIGNALS
-
-Formato breve derivado del patrón `Fl W 6s`:
-
-- «Lo que me ayudó fue…»
-- «Ojalá alguien me hubiera dicho…»
-- «Pedir ayuda empezó cuando…»
-
-Duración orientativa: 15–30 segundos.
+1. **LISTEN TO A STORY**
+2. **RECORD YOUR SIGNAL**
+3. **JOIN A SESSION**
+4. **LIGHTHOUSE RADIO**
 
 ---
 
-# 14. LEARN — SIGUIENTE PRIORIDAD
+# 14. RECORD YOUR SIGNAL — NÚCLEO DE EXPRESIÓN
 
-LEARN no debe parecer un curso online pegado a la experiencia.
+Principio:
 
-Debe sentirse como habitaciones, señales y pequeñas situaciones del mismo mundo.
+# **El producto no es el podcast. El producto es hablar.**
 
-## 14.1 LISTENING IS A SKILL
+Una persona puede no querer “hacer un podcast”, pero sí puede necesitar decir algo en voz alta.
 
-Microtaller interactivo sobre escucha.
+Entrada:
 
-Ejemplo:
+# **RECORD YOUR SIGNAL**
 
-Persona: «No puedo más.»
+> You don't need the perfect words. Start where you are.
 
-Respuesta A: «Venga, no pienses así. Tienes muchas cosas buenas.»
+Modos de grabación:
 
-Respuesta B: «Parece que estás pasando por algo muy duro. Estoy aquí. Cuéntame.»
+## FREE SPEAK
+Hablar libremente.
+
+## GUIDED
+Responder a preguntas que ayudan a construir una narración.
+
+## 60 SECOND SIGNAL
+Señal breve.
+
+## LONG FORM
+Historia con tiempo y calma.
+
+Regla clave:
+
+# **Grabar no significa enviar.**
+
+La primera versión debe grabar localmente y permitir:
+
+- grabar,
+- pausar,
+- continuar,
+- detener,
+- reproducir,
+- borrar,
+- volver a grabar,
+- descargar/local,
+- decidir después qué hacer con el audio.
+
+---
+
+# 15. PODCAST WORKSHOP — A PLACE TO SPEAK
+
+El taller de podcast no se diseña para maximizar audiencia. Se diseña para **facilitar conversación**.
+
+## SOLO
+Una persona habla sola.
+
+Prompts posibles:
+
+- What has been hardest lately?
+- When did you first notice something had changed?
+- What do you wish someone understood?
+- What would you like someone to hear?
+
+## GUIDED
+Estructura narrativa:
+
+1. **BEFORE THE STORM**
+2. **THE SIGNAL**
+3. **THE SILENCE**
+4. **ANOTHER LIGHT**
+
+## CONVERSATION
+Dos personas:
+
+- persona + familiar,
+- persona + amigo,
+- persona + voluntario,
+- persona + profesional.
+
+La interfaz proporciona estructura, tiempo, preguntas y grabación. No media clínicamente ni analiza emociones.
+
+## GROUP
+Taller remoto o presencial, orientativamente 4–8 personas y moderador.
+
+Temas posibles:
+
+- The first time I asked for help
+- What listening looked like for me
+- Relapse
+- Family
+- Loneliness
+- Addiction and emotional pain
+
+---
+
+# 16. PRIVACY / CONSENT — QUIÉN PUEDE OÍR LA SEÑAL
+
+La decisión principal ocurre **después de grabar**, para no inhibir la expresión inicial.
 
 Pregunta:
 
-**Which one feels like someone stayed?**
+# **WHO SHOULD HEAR THIS SIGNAL?**
 
-La experiencia enseña mediante situación y elección, no clase teórica.
+## PRIVATE — ONLY ME
 
-## 14.2 MICRO-TALLERES
+- no upload,
+- reproducir,
+- descargar,
+- borrar.
 
-Posibles piezas de 3–8 minutos:
+## ASSOCIATION ONLY
 
-- cómo pedir ayuda cuando no sabes qué decir,
-- cómo escuchar sin intentar arreglarlo todo,
-- soledad no deseada,
-- duelo,
-- adicciones y salud emocional,
-- culpa,
-- recaída,
-- acompañar a otra persona.
+Enviar sólo a una organización participante.
 
-## 14.3 LIGHTHOUSE SESSIONS
+Requiere antes de producción:
 
-Contenido de mayor duración:
-
-01 — How to ask for help  
-02 — How to listen without fixing  
-03 — When addiction and emotional pain meet  
-04 — What recovery really looks like  
-05 — Loneliness  
-06 — Relapse is information, not the end
-
-## 14.4 THE KEEPERS
-
-Metáfora para personas que escuchan señales.
-
-**People who stay awake to hear signals.**
-
----
-
-# 15. PARTICIPACIÓN Y EXPANSIÓN
-
-## RECORD YOUR SIGNAL — TALLER VOCES DEL FARO
-
-Taller participativo para convertir una experiencia difícil en una historia capaz de ayudar a otra persona.
-
-Principios:
-
+- organización receptora real,
 - consentimiento explícito,
-- derecho a no publicar,
-- control sobre qué contar,
-- posibilidad de anonimización,
-- derecho de retirada según marco acordado,
-- revisión ética/editorial,
-- no recrearse en el sufrimiento.
+- finalidad,
+- expectativa de respuesta,
+- plazo orientativo,
+- aviso de que no es emergencia,
+- política de retirada.
 
-## BUILD A LIGHTHOUSE
+## ANONYMOUS PUBLIC
 
-Formato educativo/participativo para jóvenes: grupos crean una historia, un audio, una señal y una respuesta.
+Puede publicarse sin identidad, siempre con:
 
-## EXPOSICIÓN FÍSICA
+- revisión,
+- edición voluntaria,
+- retirada de datos identificativos,
+- moderación,
+- autorización explícita.
 
-Evolución potencial:
+Nunca auto-publicación inmediata.
 
-- habitación oscura,
-- haz real giratorio,
-- auriculares,
-- cada posición del haz activa una historia,
-- profesionales/voluntarios disponibles al final.
+## PUBLIC
 
-Frase candidata:
+Publicación con identidad y consentimiento reforzado.
 
-> **EVERY LIGHT IS SOMEONE TRYING TO BE SEEN.**
+Acción transversal obligatoria:
 
----
-
-# 16. BACKLOG DE INTERACCIÓN
-
-Conservar como ideas, no implementar sin nueva aprobación:
-
-- **BEARING — DO YOU KNOW YOUR BEARING?**
-- **STORM PROCEDURE**
-- **I'M WATCHING ANOTHER LIGHT**
-- **KEEPER'S LOG**
-- **60 SECONDS IN THE LANTERN ROOM**
-- **NOT TONIGHT**
-- **Fl W 6s → I'M HERE**
-
-Relectura candidata:
-
-> **Every six seconds, the lighthouse says the same thing: I'M HERE.**
-
-> **Sometimes asking for help begins the same way.**
+### **DELETE THIS SIGNAL**
 
 ---
 
-# 17. PRINCIPIOS DE SEGURIDAD Y ÉTICA
+# 17. AUDIO LIBRARY — ARQUITECTURA
 
-1. **No diagnosticar.**
-2. **No puntuar el riesgo como juego.**
-3. **No fingir respuestas humanas.**
-4. **Privacidad por defecto.**
-5. **Consentimiento explícito para historias reales.**
-6. **Evitar romantizar sufrimiento, depresión, adicción, soledad o crisis.**
-7. **La conexión debe ser real cuando se promete.**
-8. **Recursos críticos siempre verificables.**
-9. **No IA terapeuta ni sustitución de profesionales.**
-10. **Contenido sensible con moderación y criterios trauma-informed.**
+No debe ser un “Spotify interno”.
+
+La biblioteca se organiza por **tipo de voz y función humana**.
+
+## VOICES
+
+### I'VE BEEN THE LIGHTHOUSE
+Testimonios en primera persona.
+
+### I'VE SEEN THE SIGNAL
+Familiares y amistades.
+
+### I ANSWER SIGNALS
+Profesionales y voluntarios.
+
+### I'M STILL FINDING MY WAY
+Procesos abiertos, sin final feliz forzado.
+
+## SESSIONS
+
+- Asking for help
+- Relapse
+- Loneliness
+- Family
+- Addiction and emotional pain
+- Grief
+- Starting again
+
+## SHORT SIGNALS
+
+6 s / 30 s / 60 s.
+
+## EXPERT LIGHTS
+
+Respuestas breves de profesionales a preguntas concretas.
+
+Cada audio debe poder describir:
+
+- duración,
+- tipo de voz,
+- tema,
+- idioma,
+- nivel de anonimato,
+- aviso de contenido sensible si procede,
+- estado de consentimiento,
+- ámbito de escucha.
 
 ---
 
-# 18. COLABORACIÓN INSTITUCIONAL
+# 18. LIGHTHOUSE RADIO — DE DEMO TÉCNICA A INTERFAZ EDITORIAL
+
+La radio demo actual no es contenido final.
+
+La interfaz objetivo debe tener:
+
+## LIVE
+Talleres, conversaciones o programas en directo.
+
+## VOICES
+Historias grabadas.
+
+## SESSIONS
+Coloquios, expertos y talleres.
+
+Centro visual:
+
+# **ON AIR**
+
+con:
+
+- play / pause,
+- waveform,
+- duración,
+- capítulo,
+- nombre o alias,
+- descripción,
+- próximo programa.
+
+CTA principal:
+
+# **ADD YOUR SIGNAL**
+
+No “Follow”.
+
+---
+
+# 19. LEARN — CONECTADO A LAS VOCES
+
+LEARN no debe parecer un curso separado.
+
+Modelo aprobado:
+
+# **STORY → REFLECTION → SKILL**
+
+Ejemplos:
+
+- una historia sobre alguien que respondió “estoy bien” → **ASK TWICE**
+- una historia de recaída → **WHAT RELAPSE IS AND ISN'T**
+- una historia de un familiar intentando resolver todo → **LISTENING WITHOUT FIXING**
+
+Microtalleres prioritarios:
+
+- How to stay
+- The first ten words
+- Notice the signal
+- Bring in another station
+- How to ask for help
+- How to listen without fixing
+- Limits and self-care
+
+---
+
+# 20. RECORRIDO INTEGRADO
+
+La evolución completa debe sentirse así:
+
+**EXPERIENCE**  
+Vivo la historia.
+
+↓
+
+**SIGNAL**  
+Entiendo que pedir ayuda puede empezar con algo pequeño.
+
+↓
+
+**LISTEN**  
+Descubro otras voces y que también existe un lugar para la mía.
+
+↓
+
+**SPEAK / RECORD**  
+Grabo mi propia señal.
+
+↓
+
+**PRIVACY**  
+Decido quién puede escucharla.
+
+↓
+
+**LEARN**  
+Aprendo a hablar y escuchar mejor.
+
+↓
+
+**CONNECT**  
+Si quiero, la señal puede llegar a una persona real.
+
+---
+
+# 21. ORDEN DE IMPLEMENTACIÓN APROBADO
+
+## FASE A — DISCOVERY + RECORD
+
+1. hacer LISTEN visible después de Another Light / Another Station,
+2. crear nueva entrada LISTEN,
+3. implementar **Record Your Signal**,
+4. grabación local en navegador,
+5. preview / pause / stop / delete / re-record,
+6. selector Privacy/Consent en modo demo,
+7. no backend de audio todavía.
+
+## FASE B — PODCAST WORKSHOP
+
+- Solo,
+- Guided,
+- Conversation,
+- Group,
+- prompts,
+- temporización,
+- estructura de sesión.
+
+## FASE C — LIBRARY + RADIO
+
+- Voices,
+- Sessions,
+- Short Signals,
+- Expert Lights,
+- reproductor editorial,
+- demos claramente etiquetadas hasta disponer de contenido autorizado.
+
+## FASE D — LEARN CONNECTED
+
+Conectar historias con microtalleres relevantes.
+
+## FASE E — ASSOCIATION FLOW
+
+Sólo con interlocución institucional real:
+
+- envío privado,
+- consentimiento,
+- moderación,
+- almacenamiento seguro,
+- retirada,
+- protocolo de respuesta.
+
+---
+
+# 22. MÉTRICAS DE ÉXITO
+
+No medir el proyecto principalmente por audiencia.
+
+Métricas más coherentes:
+
+- personas que hablaron,
+- primeras grabaciones,
+- minutos de conversación,
+- señales privadas creadas,
+- participación en talleres,
+- historias escuchadas,
+- microtalleres completados,
+- conexiones voluntarias con ayuda real.
+
+Una gran audiencia puede ser valiosa, pero no es el objetivo principal.
+
+---
+
+# 23. PRINCIPIOS DE SEGURIDAD Y ÉTICA
+
+1. No diagnosticar.
+2. No puntuar riesgo como juego.
+3. No fingir respuestas humanas.
+4. Privacidad por defecto.
+5. Consentimiento explícito para audio compartido/publicado.
+6. Grabar no equivale a enviar.
+7. Nunca auto-publicar testimonios sensibles.
+8. No IA terapeuta ni sustitución profesional.
+9. Recursos críticos verificables.
+10. Contenido sensible con safeguarding y moderación.
+11. Derecho a borrar antes de enviar/publicar.
+12. No asumir colaboración institucional hasta que exista formalmente.
+
+---
+
+# 24. COLABORACIÓN INSTITUCIONAL
 
 ## Proyecto Hombre
 
@@ -504,9 +679,10 @@ Territorios naturales:
 - recaída,
 - culpa,
 - recuperación,
-- historias reales,
 - talleres de narrativa/podcast,
+- historias reales,
 - profesionales y participantes,
+- sesiones grupales,
 - derivación a centros.
 
 ## Teléfono de la Esperanza
@@ -519,6 +695,7 @@ Territorios naturales:
 - aprender a pedir ayuda,
 - aprender a escuchar,
 - voluntariado,
+- Listening Room,
 - The Keepers,
 - Lighthouse Sessions,
 - Another Station.
@@ -527,29 +704,31 @@ No asumir aprobación, colaboración o endorsement institucional hasta que exist
 
 ---
 
-# 19. QA — NO NEGOCIABLE
+# 25. QA — NO NEGOCIABLE
 
 Antes de mergear cambios de Support:
 
 1. comparar geometría Frozen Faro vs Support,
-2. comparar scroll total,
-3. comprobar Hero / Coast / Keeper / Stair / Machine / Beam / Afterlight,
-4. capturar posiciones 0 / 20 / 40 / 60 / 80 / 100 %, 
-5. comprobar desktop y móvil,
-6. comprobar EN y ES,
-7. comprobar scroll lock y retorno exacto,
-8. comprobar revelación progresiva,
-9. comprobar Another Light,
-10. comprobar Another Station,
-11. inspeccionar visualmente el preview antes del merge.
+2. comprobar scroll y cámaras,
+3. Hero / Coast / Keeper / Stair / Machine / Beam / Afterlight,
+4. desktop y móvil,
+5. EN / ES,
+6. scroll lock y retorno,
+7. activadores,
+8. Another Light,
+9. Another Station,
+10. LISTEN,
+11. permisos de micrófono,
+12. grabar / pausar / detener / reproducir / borrar / regrabar,
+13. comprobar que audio local no se sube,
+14. validar fallback cuando micrófono es denegado,
+15. revisión visual humana.
 
 # **Cualquier regresión estructural visual = FAIL / NO MERGE.**
 
-Playwright + Chromium es el camino de QA automatizado. La validación visual humana sigue siendo obligatoria.
-
 ---
 
-# 20. ESTADO DEL PROYECTO
+# 26. ESTADO DEL PROYECTO
 
 ## IMPLEMENTADO / EN MEJORA
 
@@ -557,44 +736,49 @@ Playwright + Chromium es el camino de QA automatizado. La validación visual hum
 - [x] Weather Inside
 - [x] One Step
 - [x] Send a Signal
-- [x] Another Light Answers — simbólico
-- [x] Another Station — primera versión
+- [x] Another Light Answers
+- [x] Another Station — carta nocturna primera versión
+- [x] primeros módulos LISTEN / LEARN
+- [x] radio técnica demo
 - [x] EN / ES
-- [x] Original preservado
-- [x] Storytelling preservado
 - [x] autoría persistente
-- [ ] mejorar visibilidad de los 4 activadores
-- [ ] elevar Another Light al hero moment aprobado
-- [ ] transformar Another Station en carta nocturna de navegación
-- [ ] terminar QA Playwright/Chromium de Support
 
 ## SIGUIENTE FASE PRIORITARIA
 
-- [ ] LISTEN — Lighthouse Radio
-- [ ] LISTEN — The Listening Room
-- [ ] LISTEN — historias desde distintas perspectivas
-- [ ] LISTEN — 6 Second Signals
-- [ ] LEARN — Listening Is a Skill
-- [ ] LEARN — microtalleres
-- [ ] LEARN — Lighthouse Sessions
-- [ ] LEARN — The Keepers
+### FASE A — DISCOVERY + RECORD
+
+- [ ] elevar descubrimiento de LISTEN
+- [ ] YOU ARE NOT THE ONLY SIGNAL
+- [ ] nueva landing/room LISTEN
+- [ ] Record Your Signal
+- [ ] MediaRecorder local
+- [ ] audio preview
+- [ ] pause / resume / stop
+- [ ] delete / re-record
+- [ ] privacy selector demo
+- [ ] fallback de permisos
+- [ ] QA desktop / mobile / EN / ES
+
+Después:
+
+- [ ] FASE B — Podcast Workshop
+- [ ] FASE C — Library + Radio
+- [ ] FASE D — Learn Connected
+- [ ] FASE E — Association Flow
 
 ---
 
-# 21. REGLA DE GOBERNANZA DOCUMENTAL
+# 27. REGLA DE GOBERNANZA DOCUMENTAL
 
-Este `MASTER.md` es la única fuente viva de verdad para este bloque de producto.
+Este `MASTER.md` es la única fuente viva de verdad para este bloque.
 
-Regla:
-
-- si una decisión cambia poco → **actualizar este documento**;
-- si el cambio es grande → **reconstruir y sustituir este documento** conservando lo válido y eliminando lo obsoleto;
-- no crear documentos paralelos tipo `CURRENT`, `FINAL`, `V2`, `V3`, `LATEST` para decisiones del mismo ámbito;
-- los documentos históricos sólo se conservan si tienen una función de archivo explícita y no compiten como fuente vigente.
+- cambio pequeño → actualizar este documento,
+- cambio grande → reconstruir este mismo documento,
+- no crear `CURRENT`, `FINAL`, `V2`, `V3`, `LATEST` paralelos.
 
 ---
 
-# 22. IDEA RECTORA
+# 28. IDEA RECTORA
 
 THE LAST LIGHTHOUSE no debe colocar recursos institucionales encima de una historia bonita.
 
@@ -604,8 +788,12 @@ Debe conseguir que todo sea un único recorrido:
 
 # **historia → metáfora → participación → educación → señal → persona real**
 
-Pregunta de control para cualquier mejora futura:
+Y para LISTEN / PODCAST:
 
-> **¿Hace esta mejora que THE LAST LIGHTHOUSE sea un recorrido más fuerte desde la historia hasta la conexión humana real sin romper el Faro cinematográfico?**
+# **THE LAST LIGHTHOUSE DOESN'T ASK PEOPLE TO BECOME PODCASTERS. IT GIVES THEM A REASON AND A SAFE WAY TO SPEAK.**
+
+Pregunta de control:
+
+> **¿Hace esta mejora que una persona tenga una forma más humana, segura y accesible de hablar, escuchar o conectar sin romper el Faro cinematográfico?**
 
 Si no, no pertenece al núcleo.
