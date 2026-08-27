@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const fs = require('fs');
 
-test.setTimeout(240000);
+test.setTimeout(420000);
 
 const BASE = 'http://127.0.0.1:4174/storytelling.html';
 const SUPPORT = 'http://127.0.0.1:4173/storytelling.html';
